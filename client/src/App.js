@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import HomaPage from "./components/home/home.container";
+import HomePage from "./components/home/home.container";
 import SignupPage from "./components/signup/signup.container";
 
 // import logo from './logo.svg';
@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path = '/' element = {<HomaPage />}/>
+        <Route path = '/' element = {<HomePage />}/>
         <Route path = '/login' element = {<login/>}/>
         <Route path = '/signup' element = {<SignupPage />}/>
         <Route path = '/board' element = {<board/>}/>
@@ -18,7 +18,6 @@ function App() {
     </Router>
   );
 }
-
 
 
 export default App;
