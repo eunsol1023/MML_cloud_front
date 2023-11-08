@@ -1,21 +1,119 @@
 import styles from "./home.module.css";
+// import styles from './MainLayout.module.css';
+
+const playlists = [
+  {
+    id: 1,
+    title: "Love Lee",
+    artist: "AKMU",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/181/610/84181610_1692585955705_1_600x600.JPG/dims/resize/Q_80,0",
+    description: "AKMU의 신곡 Love Lee를 만나보세요.",
+  },
+  {
+    id: 2,
+    title: "단기 알바",
+    artist: "기리보이",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/372/146/84372146_1698310204451_1_600x600.JPG/dims/resize/Q_80,0",
+    description: "최신 댄스 히트곡 모음",
+  },
+  {
+    id: 3,
+    title: "음악의 신",
+    artist: "SEVENTEEN",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/411/479/84411479_1698023788065_1_600x600.JPG/dims/resize/Q_80,0",
+    description: "SEVENTEEN의 강렬한 비트의 노래들",
+  },
+  {
+    id: 4,
+    title: "Super Shy",
+    artist: "NewJeans",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/019/740/84019740_1688692234715_1_600x600.JPG/dims/resize/Q_80,0",
+    description: "NewJeans의 청량한 목소리를 느낄 수 있는 플레이리스트",
+  },
+  {
+    id: 5,
+    title: "Get A Guitar",
+    artist: "RIIZE",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/181/596/84181596_1693817383651_1_600x600.JPG/dims/resize/Q_80,0",
+    description: "기타 리프가 돋보이는 곡들의 컬렉션",
+  },
+  // ... 더 많은 플레이리스트 객체를 추가할 수 있습니다.
+];
 
 export default function HomePageUI(props) {
-    return (
-        <MainLayout>
-          {/* 여기에 메인 페이지의 콘텐츠를 넣으면 됩니다. */}
-          <HomePageUI onClickSignup={handleSignupClick}
-                      onClickLogin={handleLoginClick}
-                      onClickBoard={handleBoardClick} />
-        </MainLayout>
-
-{/* <div className={styles.body}>
-<button onClick={props.onClickSignup}>회원가입으로 가는 버튼</button>
-<br />
-<button onClick={props.onClickLogin}>로그인페이지</button>
-<br />
-<button onClick={props.onClickBoard}>플레이리스트</button>
-</div> */}
-      );
-
+  return (
+    <div className={styles.mainContainer}>
+      <aside className={styles.sidebar}>
+        <div className={styles.logo}>MML ♪</div>
+        <nav className={styles.navMenu}>
+          <ul>
+            <li onClick={props.onClickHome}>홈</li>
+            <li onClick={props.onClickPlaylist}>플레이리스트</li>
+            {/* 추가 메뉴 항목 */}
+          </ul>
+        </nav>
+      </aside>
+      <div className={styles.content}>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_name}>리스트 1번</div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_name}>리스트 2번</div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_name}>리스트 3번</div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

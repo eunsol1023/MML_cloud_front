@@ -1,12 +1,125 @@
 .wrapper {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.2;
-    color: #777;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #777;
 }
 
-.body {
-    background-color: green;
+.content {
+  /* background-color: red; */
+  flex-direction: column;
+  margin-left: 280px; /* 사이드바 너비만큼 여백 */
+  padding: 2rem;
+  width: calc(100% - 280px); /* 사이드바 너비를 제외한 나머지 영역 */
 }
 
-  
+.mainContainer {
+  display: flex;
+  /* background-color: black; */
+  padding: 0;
+}
+
+.sidebar {
+  width: 250px; /* 사이드바의 너비 */
+  background-color: beige;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.navMenu {
+  /* list-style: none; */
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.navMenu li {
+  margin-bottom: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  /* 스타일링 추가 필요 */
+}
+
+/* ContentArea.module.css */
+
+.playlist_box{
+    /* background-color: gray; */
+    width: 1170px;
+    height: 350px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.playlist_name{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+    padding-left: 35                              px;
+
+}
+.song_box {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 0.1rem; /* 카드 사이의 간격 */
+  /* padding: rem; 콘텐츠 영역의 패딩 */
+  /* padding-top: rem; */
+  /* background-color: gray; */
+  margin-bottom: 30px;
+  justify-content: space-evenly;
+}
+
+.card {
+  /* background-color: white; */
+  width: 210px;
+  height: 260px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* flexbox 레이아웃을 사용 */
+  flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
+  justify-content: center; /* 수직 방향으로 중앙 정렬 */
+  align-items: center; /* 수평 방향으로 중앙 정렬 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+.cardImage {
+  width: 190px;
+  height: 190px; /* 이미지의 원본 비율을 유지 */
+  /* margin: auto; */
+}
+
+.cardContent {
+  display: flex; /* flexbox 레이아웃을 사용 */
+  flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
+  justify-content: center; /* 수직 방향으로 중앙 정렬 */
+  align-items: center; /* 수평 방향으로 중앙 정렬 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+.cardContent h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.cardContent p {
+  margin: 0;
+  color: #666;
+  font-size: 0.875rem;
+}
