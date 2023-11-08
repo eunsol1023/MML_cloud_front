@@ -42,13 +42,12 @@ const playlists = [
       "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/181/596/84181596_1693817383651_1_600x600.JPG/dims/resize/Q_80,0",
     description: "기타 리프가 돋보이는 곡들의 컬렉션",
   },
-  // ... 더 많은 플레이리스트 객체를 추가할 수 있습니다.
 ];
 
 export default function HomePageUI(props) {
   return (
-    <div className={styles.mainContainer}>
-      <div className={styles.content}>
+    // <div className={styles.body}>
+      <div className={styles.body}>
         <div className={styles.playlist_box}>
           <div className={styles.playlist_name}>리스트 1번</div>
           <div className={styles.song_box}>
@@ -104,6 +103,6 @@ export default function HomePageUI(props) {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }

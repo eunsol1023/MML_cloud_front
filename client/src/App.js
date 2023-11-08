@@ -4,6 +4,7 @@ import { useState } from "react";
 import HomePage from "./components/home/home.container";
 import SignupPage from "./components/signup/signup.container";
 import Categories from "./components/menubar/menubar.js";
+import Playlist from './components/playlist/playlist.container.js'
 import styles from './App.module.css'
 
 // import logo from './logo.svg';
@@ -18,9 +19,9 @@ function App() {
       <Categories />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<login />} />
+          {/* <Route path="/login" element={<Playlist />} /> */}
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/board" element={<board />} />
+          <Route path="/playlist" element={<Playlist />} />
         </Routes>
       </Router>
     </div>

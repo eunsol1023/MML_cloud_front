@@ -25,15 +25,15 @@ function MenuBar() {
         <a href="/login" className={styles.menuItem}>
           Login
         </a>
-        <a href="/" className={styles.menuItem}>
-          Home
+        <a href="/playlist" className={styles.menuItem}>
+          Playlsit
         </a>
-        <a href="#services" className={styles.menuItem}>
+        {/* <a href="#services" className={styles.menuItem}>
           Services
         </a>
         <a href="#contact" className={styles.menuItem}>
           Contact
-        </a>
+        </a> */}
       </div>
     </nav>
   );
