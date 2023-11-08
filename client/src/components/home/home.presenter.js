@@ -48,16 +48,6 @@ const playlists = [
 export default function HomePageUI(props) {
   return (
     <div className={styles.mainContainer}>
-      <aside className={styles.sidebar}>
-        <div className={styles.logo}>MML ♪</div>
-        <nav className={styles.navMenu}>
-          <ul>
-            <li onClick={props.onClickHome}>홈</li>
-            <li onClick={props.onClickPlaylist}>플레이리스트</li>
-            {/* 추가 메뉴 항목 */}
-          </ul>
-        </nav>
-      </aside>
       <div className={styles.content}>
         <div className={styles.playlist_box}>
           <div className={styles.playlist_name}>리스트 1번</div>

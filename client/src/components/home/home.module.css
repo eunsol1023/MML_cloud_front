@@ -5,64 +5,25 @@
   color: #777;
 }
 
-.content {
-  /* background-color: red; */
-  flex-direction: column;
-  margin-left: 280px; /* 사이드바 너비만큼 여백 */
-  padding: 2rem;
-  width: calc(100% - 280px); /* 사이드바 너비를 제외한 나머지 영역 */
-}
-
 .mainContainer {
+  margin-top: 60px;
+  margin-left: 350px;
   display: flex;
-  /* background-color: black; */
   padding: 0;
 }
 
-.sidebar {
-  width: 250px; /* 사이드바의 너비 */
-  background-color: beige;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  overflow-y: auto;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.navMenu {
-  /* list-style: none; */
-  padding: 0;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-}
-
-.navMenu li {
-  margin-bottom: 2rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  /* 스타일링 추가 필요 */
+.content {
+  flex-direction: column;
 }
 
 /* ContentArea.module.css */
 
 .playlist_box{
     /* background-color: gray; */
-    width: 1170px;
+    width: 1100px;
     height: 350px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 
 }
 
@@ -76,18 +37,15 @@
 .song_box {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  gap: 0.1rem; /* 카드 사이의 간격 */
-  /* padding: rem; 콘텐츠 영역의 패딩 */
-  /* padding-top: rem; */
-  /* background-color: gray; */
+  gap: 0.1rem; 
   margin-bottom: 30px;
   justify-content: space-evenly;
 }
 
 .card {
-  /* background-color: white; */
-  width: 210px;
-  height: 260px;
+  /* background-color: yellow; */
+  width: 200px;
+  height: 250px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   overflow: hidden;
@@ -100,8 +58,8 @@
 }
 
 .cardImage {
-  width: 190px;
-  height: 190px; /* 이미지의 원본 비율을 유지 */
+  width: 180px;
+  height: 180px; /* 이미지의 원본 비율을 유지 */
   /* margin: auto; */
 }
 

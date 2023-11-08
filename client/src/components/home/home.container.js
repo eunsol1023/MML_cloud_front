@@ -8,9 +8,9 @@ export default function HomaPage() {
     navigate("/signup");
   };
   
-  const onClickLogin = () => {
-    navigate("/login")
-  };
+  // const onClickLogin = () => {
+  //   navigate("/login")
+  // };
 
   return <HomePageUI onClickSignup={onClickSignup} />;
 }
