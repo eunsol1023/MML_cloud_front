@@ -49,7 +49,7 @@ export default function HomePageUI(props) {
     // <div className={styles.body}>
       <div className={styles.body}>
         <div className={styles.playlist_box}>
-          <div className={styles.playlist_name}>리스트 1번</div>
+          <div className={styles.playlist_name}>사용자 청취기록 기반 리스트</div>
           <div className={styles.song_box}>
             {playlists.map((playlist, index) => (
               <div key={index} className={styles.card}>
@@ -67,7 +67,7 @@ export default function HomePageUI(props) {
           </div>
         </div>
         <div className={styles.playlist_box}>
-          <div className={styles.playlist_name}>리스트 2번</div>
+          <div className={styles.playlist_name}>사용자 연령, 성별 기반 리스트</div>
           <div className={styles.song_box}>
             {playlists.map((playlist, index) => (
               <div key={index} className={styles.card}>
@@ -85,7 +85,7 @@ export default function HomePageUI(props) {
           </div>
         </div>
         <div className={styles.playlist_box}>
-          <div className={styles.playlist_name}>리스트 3번</div>
+          <div className={styles.playlist_name}>나머지 개발중인 모델</div>
           <div className={styles.song_box}>
             {playlists.map((playlist, index) => (
               <div key={index} className={styles.card}>
