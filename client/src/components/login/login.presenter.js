@@ -26,7 +26,7 @@ export default function LoginPageUI(props) {
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
             <img src={idIcon} className={styles.idIcon} alt="id" />
-            <input type="text" id="ID" placeholder="아이디를 입력해주세요" />
+            <input className={styles.inputtext} type="text" id="ID" placeholder="아이디를 입력해주세요" />
           </div>
           <br />
           <div className={styles.psBox}>
@@ -34,7 +34,7 @@ export default function LoginPageUI(props) {
             <input
               type="password"
               id="PASSWORD"
-              className={styles.input}
+              className={styles.inputtext}
               placeholder="비밀번호를 입력해주세요"
             />
           </div>
@@ -53,8 +53,7 @@ export default function LoginPageUI(props) {
             <span 
                 onClick={props.onClickRegister} 
                 className={styles.signSpan}>
-                    회원가입하러 가기 →
-            </span>
+                    회원가입하러 가기 →</span>
           </button>
         </div>
       </div>

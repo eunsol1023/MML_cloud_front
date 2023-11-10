@@ -7,7 +7,7 @@ import axios from "axios";
 export default function SignupPage() {
     const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
+  const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [gender, setGender] = useState("");
   const [birthYear, setBirthYear] = useState("");
@@ -17,8 +17,8 @@ export default function SignupPage() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
   const [passwordMismatch, setPasswordMismatch] = useState(false);
 
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value)
+  const onChangeUserId = (e) => {
+    setUserId(e.target.value)
   }
   
   const handlePasswordChange = (e) => {
@@ -46,7 +46,7 @@ export default function SignupPage() {
   };
 
     const onClickSubmit =  () => {
-        if(!email) {
+        if(!userid) {
             alert('이메일을 입력해주세요')
             return
         }
@@ -66,7 +66,7 @@ export default function SignupPage() {
         // API 가 있을때
         // try{
         //     const response = await axios.post('백엔드에서 받는 회원가입 API',{
-        //         email ,
+        //         userid ,
         //         password ,
         //         gender ,
         //         birthYear,
@@ -85,7 +85,7 @@ export default function SignupPage() {
     }  
 
   return (<SignupPageUI 
-    email = {email}
+    userid = {userid}
     password = {password}
     passwordConfirm = {passwordConfirm}
     passwordMismatch = {passwordMismatch}
@@ -100,7 +100,7 @@ export default function SignupPage() {
     handleBirthMonthChange = {handleBirthMonthChange}
     handleBirthDayChange ={handleBirthDayChange}
     onClickSubmit = {onClickSubmit}
-    onChangeEmail = {onChangeEmail}
+    onChangeUserId = {onChangeUserId}
   />
   )
 }

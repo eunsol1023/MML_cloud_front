@@ -40,7 +40,7 @@ export default function SignupPageUI(props) {
         <h2>회원가입</h2>
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
-            <input onChange={props.onChangeEmail} type="text" id="userId" placeholder="아이디" />
+            <input onChange={props.onChangeUserId} type="text" id="userId" placeholder="아이디" />
           </div>
           <br />
           <div className={styles.psBox}>
