@@ -2,17 +2,19 @@ import HomePageUI from "./home.presenter";
 import { useNavigate } from "react-router-dom";
 
 
+
 export default function HomePage() {
     const navigate = useNavigate()
 
-    const onClickSignup = () => {
-        navigate('/signup')
-    }
 
 
-    return(
-        <HomePageUI
-            onClickSignup = {onClickSignup}
-         />
-    )
+  const onClickSignup = () => {
+    navigate("/signup");
+  };
+  
+  // const onClickLogin = () => {
+  //   navigate("/login")
+  // };
+
+  return <HomePageUI onClickSignup={onClickSignup} />;
 }
