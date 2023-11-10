@@ -7,7 +7,7 @@ import idIcon from "./id.png";
 import imgIcon from "./img2.png";
 import psIcon from "./lock.png";
 
-export default function LoginPageUI() {
+export default function LoginPageUI(props) {
   const handleLoginSubmit = (event) => {
     event.preventDefault();
     // 로그인 했을때
@@ -50,7 +50,11 @@ export default function LoginPageUI() {
             className={styles.signButton}
             onClick={handleSignUpClick}
           >
-            <span className={styles.signSpan}>회원가입하러 가기 →</span>
+            <span 
+                onClick={props.onClickRegister} 
+                className={styles.signSpan}>
+                    회원가입하러 가기 →
+            </span>
           </button>
         </div>
       </div>

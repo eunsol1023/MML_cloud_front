@@ -22,8 +22,8 @@ function MenuBar() {
         />
       </div>
       <div className={styles.menubox}>
-        <a href="/login" className={styles.menuItem}>
-          Login
+        <a href="/main" className={styles.menuItem}>
+          Home
         </a>
         <a href="/playlist" className={styles.menuItem}>
           Playlsit

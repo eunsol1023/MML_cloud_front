@@ -113,4 +113,5 @@ input:focus {
     font-size: 20px;
     color: #868b94;
     font-size: 13px;
+    cursor: pointer;
 }
