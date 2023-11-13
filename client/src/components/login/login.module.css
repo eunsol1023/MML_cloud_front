@@ -52,7 +52,7 @@
     margin-right: 10px;
 }
 
-input {
+.inputtext {
     text-align: left;
     width: 250px;
     height: 40px;
@@ -61,11 +61,11 @@ input {
     background: none;
     margin-bottom: 10px;
     color: #868b94;
-}
-
-input:focus {
+  }
+  
+  .inputtext:focus {
     outline: none;
-}
+  }
 
 .inputBox .psBox {
     display: flex;
