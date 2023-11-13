@@ -41,33 +41,34 @@ export default function SignupPageUI(props) {
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
             <input 
-            onChange={props.onChangeEmail} 
+            onChange={props.onChangeUserId} 
             className={styles.idInput}
             type="text" 
             id="userId" 
             placeholder="아이디" 
             />
-            <input onChange={props.onChangeUserId} type="text" id="userId" placeholder="아이디" />
           </div>
-          <br />
-          <div className={styles.psBox}>
-            <input
-              type="password"
-              id="password"
-              className={styles.psInput}
-              placeholder="비밀번호"
-              value={props.password}
-              onChange={props.handlePasswordChange}
-            />
-            <br />
-            <input
-              type="password"
-              id="passwordConfirm"
-              className={styles.psInput}
-              placeholder="비밀번호 확인"
-              value={props.passwordConfirm}
-              onChange={props.handlePasswordConfirmChange}
-            />
+          <div className={styles.pwBos}>
+            <div className={styles.idBox}>
+              <input
+                type="password"
+                id="password"
+                className={styles.psInput}
+                placeholder="비밀번호"
+                value={props.password}
+                onChange={props.handlePasswordChange}
+              />
+            </div>
+            <div className={styles.idBox}>
+              <input
+                type="password"
+                id="passwordConfirm"
+                className={styles.psInput}
+                placeholder="비밀번호 확인"
+                value={props.passwordConfirm}
+                onChange={props.handlePasswordConfirmChange}
+              />
+            </div>
           </div>
           <div className={styles.genderBox}>
               <label className={styles.newLabel}>

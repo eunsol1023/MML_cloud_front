@@ -10,6 +10,13 @@ function MenuBar() {
     navigate("/");
   };
 
+  const onClickRedirectMain = () => {
+    navigate("/home");
+  };
+
+  const onClickRedirectPlaylist = () => {
+    navigate("/playlist");
+  };
 
   return (
     <nav className={styles.menuBar}>
@@ -22,10 +29,10 @@ function MenuBar() {
         />
       </div>
       <div className={styles.menubox}>
-        <a href="/main" className={styles.menuItem}>
+        <a className={styles.menuItem} onClick={onClickRedirectMain}>
           Home
         </a>
-        <a href="/playlist" className={styles.menuItem}>
+        <a className={styles.menuItem} onClick={onClickRedirectPlaylist}>
           Playlsit
         </a>
         {/* <a href="#services" className={styles.menuItem}>

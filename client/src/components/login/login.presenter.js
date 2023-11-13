@@ -21,7 +21,7 @@ export default function LoginPageUI(props) {
     <div className={styles.body}>
       <div className={styles.wrapper}>
         <div className={styles.imgBox}>
-          <img src={imgIcon} className="imgIcon" alt="icon" />
+          <img src={imgIcon} className={styles.imgIcon} alt="icon" />
         </div>
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
