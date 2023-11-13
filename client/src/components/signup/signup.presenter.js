@@ -47,6 +47,7 @@ export default function SignupPageUI(props) {
             id="userId" 
             placeholder="아이디" 
             />
+            <input onChange={props.onChangeUserId} type="text" id="userId" placeholder="아이디" />
           </div>
           <br />
           <div className={styles.psBox}>
