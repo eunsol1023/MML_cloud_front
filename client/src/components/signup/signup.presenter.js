@@ -47,9 +47,7 @@ export default function SignupPageUI(props) {
             id="userId" 
             placeholder="아이디" 
             />
-            <input onChange={props.onChangeUserId} type="text" id="userId" placeholder="아이디" />
           </div>
-          <br />
           <div className={styles.psBox}>
             <input
               type="password"
@@ -59,7 +57,6 @@ export default function SignupPageUI(props) {
               value={props.password}
               onChange={props.handlePasswordChange}
             />
-            <br />
             <input
               type="password"
               id="passwordConfirm"

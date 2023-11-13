@@ -1,0 +1,17 @@
+.body{
+    margin-left : 270px;
+  }
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: auto;
+    background-color: red;
+}
+
+.content {
+    margin-top: 100px;
+    height: 100px;
+    overflow-y: auto;
+    background-color: blue;
+}
