@@ -48,6 +48,7 @@ export default function SignupPageUI(props) {
             placeholder="아이디" 
             />
           </div>
+<<<<<<< HEAD
           <div className={styles.pwBos}>
             <div className={styles.idBox}>
               <input
@@ -69,6 +70,25 @@ export default function SignupPageUI(props) {
                 onChange={props.handlePasswordConfirmChange}
               />
             </div>
+=======
+          <div className={styles.psBox}>
+            <input
+              type="password"
+              id="password"
+              className={styles.psInput}
+              placeholder="비밀번호"
+              value={props.password}
+              onChange={props.handlePasswordChange}
+            />
+            <input
+              type="password"
+              id="passwordConfirm"
+              className={styles.psInput}
+              placeholder="비밀번호 확인"
+              value={props.passwordConfirm}
+              onChange={props.handlePasswordConfirmChange}
+            />
+>>>>>>> 703897380a831a753d23000d947913d52452f5a4
           </div>
           <div className={styles.genderBox}>
               <label className={styles.newLabel}>
