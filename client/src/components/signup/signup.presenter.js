@@ -37,9 +37,16 @@ export default function SignupPageUI(props) {
   return (
     <div className={styles.body}>
       <div className={styles.sWrapper}>
-        <h2>회원가입</h2>
+        <h1 className={styles.sign}>회원가입</h1>
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
+            <input 
+            onChange={props.onChangeEmail} 
+            className={styles.idInput}
+            type="text" 
+            id="userId" 
+            placeholder="아이디" 
+            />
             <input onChange={props.onChangeUserId} type="text" id="userId" placeholder="아이디" />
           </div>
           <br />
@@ -47,44 +54,46 @@ export default function SignupPageUI(props) {
             <input
               type="password"
               id="password"
-              className={styles.input}
+              className={styles.psInput}
               placeholder="비밀번호"
               value={props.password}
               onChange={props.handlePasswordChange}
             />
+            <br />
             <input
               type="password"
               id="passwordConfirm"
-              className={styles.input}
+              className={styles.psInput}
               placeholder="비밀번호 확인"
               value={props.passwordConfirm}
               onChange={props.handlePasswordConfirmChange}
             />
           </div>
           <div className={styles.genderBox}>
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="male"
-                onChange={props.handleGenderChange}
-              />
-              남자
-            </label>
-            <label>
-              <input
+              <label className={styles.newLabel}>
+                <input className={styles.newMInput}
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  onChange={props.handleGenderChange}
+                />
+                남자                
+              </label>
+              <label className={styles.newLabel}>
+                <input className={styles.newFInput}
                 type="radio"
                 name="gender"
                 value="female"
                 onChange={props.handleGenderChange}
-              />
-              여자
-            </label>
+                />
+                여자                
+              </label>
           </div>
           <div className={styles.birthBox}>
+            <span className={styles.dateSpan}>생년월일</span>
             <select
               id="birthYear"
-              className={styles.input}
+              className={styles.birthInput}
               onChange={props.handleBirthYearChange}
               value={props.birthYear}
             >
@@ -93,7 +102,7 @@ export default function SignupPageUI(props) {
             </select>
             <select
               id="birthMonth"
-              className={styles.input}
+              className={styles.birthInput}
               onChange={props.handleBirthMonthChange}
               value={props.birthMonth}
             >
@@ -102,7 +111,7 @@ export default function SignupPageUI(props) {
             </select>
             <select
               id="birthDay"
-              className={styles.input}
+              className={styles.birthInput}
               onChange={props.handleBirthDayChange}
               value={props.birthDay}
             >
@@ -114,8 +123,12 @@ export default function SignupPageUI(props) {
           {props.passwordMismatch && (
             <p className={styles.errorText}>비밀번호가 일치하지 않습니다.</p>
           )}
+          <div className={styles.buttonStyle}>
+          <button onClick={props.onClickSubmit} className={styles.nextButton}>
+            다음 페이지 ⇾
+          </button>
+          </div>
 
-          <button onClick={props.onClickSubmit} >다음 페이지</button>
         </div>
       </div>
     </div>
