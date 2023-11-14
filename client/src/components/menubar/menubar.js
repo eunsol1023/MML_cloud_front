@@ -1,17 +1,23 @@
-import React from "react";
+import React , {useEffect} from "react";
 import styles from "./menubar.module.css";
 import logoImage from "./logo.jpeg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation } from "react-router-dom";
 
 function MenuBar() {
   const navigate = useNavigate();
 
+  const location = useLocation(); 
+  
+  useEffect (() => {
+    console.log(location)
+  },[])
+
   const onClickHome = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   const onClickRedirectMain = () => {
-    navigate("/home");
+    navigate("/");
   };
 
   const onClickRedirectPlaylist = () => {
@@ -30,7 +36,7 @@ function MenuBar() {
       </div>
       <div className={styles.menubox}>
         <a className={styles.menuItem} onClick={onClickRedirectMain}>
-          Home
+          home
         </a>
         <a className={styles.menuItem} onClick={onClickRedirectPlaylist}>
           Playlsit

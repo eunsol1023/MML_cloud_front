@@ -38,23 +38,22 @@ export default function SignupPageUI(props) {
     <div className={styles.body}>
       <div className={styles.sWrapper}>
         <h1 className={styles.sign}>회원가입</h1>
-        <div className={styles.inputBox}>
+        <div>
           <div className={styles.idBox}>
             <input 
             onChange={props.onChangeUserId} 
-            className={styles.idInput}
+            className={styles.textInput}
             type="text" 
             id="userId" 
             placeholder="아이디" 
             />
           </div>
-<<<<<<< HEAD
           <div className={styles.pwBos}>
             <div className={styles.idBox}>
               <input
                 type="password"
                 id="password"
-                className={styles.psInput}
+                className={styles.textInput}
                 placeholder="비밀번호"
                 value={props.password}
                 onChange={props.handlePasswordChange}
@@ -64,31 +63,12 @@ export default function SignupPageUI(props) {
               <input
                 type="password"
                 id="passwordConfirm"
-                className={styles.psInput}
+                className={styles.textInput}
                 placeholder="비밀번호 확인"
                 value={props.passwordConfirm}
                 onChange={props.handlePasswordConfirmChange}
               />
             </div>
-=======
-          <div className={styles.psBox}>
-            <input
-              type="password"
-              id="password"
-              className={styles.psInput}
-              placeholder="비밀번호"
-              value={props.password}
-              onChange={props.handlePasswordChange}
-            />
-            <input
-              type="password"
-              id="passwordConfirm"
-              className={styles.psInput}
-              placeholder="비밀번호 확인"
-              value={props.passwordConfirm}
-              onChange={props.handlePasswordConfirmChange}
-            />
->>>>>>> 703897380a831a753d23000d947913d52452f5a4
           </div>
           <div className={styles.genderBox}>
               <label className={styles.newLabel}>

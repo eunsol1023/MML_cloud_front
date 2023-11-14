@@ -15,21 +15,21 @@ import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js
 
 
 function App() {
-  const [isMenu, setIsMenu] = useState(true)
+  const location = useLocation()
+
+  console.log(location)
+
+  const [url, setUrl] = useState('')
+
+  const onChangeUrl = () => {
+    setUrl(window.location.href.slice(21))
+  }
   
-  useEffect(() => {
-    if (window.location.href.slice(21) === '/'){
-      setIsMenu(false)
-    }else{
-      setIsMenu(true)
-    }
-  },[])
-  
+
 
   return (
     <div className={styles.body}>
-      <Router>
-        {isMenu && <Menubar />}
+        {location.pathname  !== '/' &&<Menubar />}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<HomePage />} />
@@ -38,7 +38,6 @@ function App() {
           <Route path="/artistfavorite" element = {<ArtistFavorite/>} />
           <Route path="/genrefavorite" element = {<GenreFavorite/>} />
         </Routes>
-      </Router>
     </div>
   );
 }
