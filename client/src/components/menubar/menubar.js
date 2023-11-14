@@ -16,7 +16,7 @@ function MenuBar() {
     navigate("/home");
   };
 
-  const onClickRedirectMain = () => {
+  const onClickRedirecLogin = () => {
     navigate("/");
   };
 
@@ -35,8 +35,8 @@ function MenuBar() {
         />
       </div>
       <div className={styles.menubox}>
-        <a className={styles.menuItem} onClick={onClickRedirectMain}>
-          home
+        <a className={styles.menuItem} onClick={onClickRedirecLogin}>
+          Login
         </a>
         <a className={styles.menuItem} onClick={onClickRedirectPlaylist}>
           Playlsit

@@ -1,7 +1,9 @@
 import GenreFavoriteUI from "./genrefavorite.presenter";
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export default function GenreFavorite() {
+    const navigate = useNavigate();
 
     const [favoriteGenre, setFavoriteGenre] = useState([]);
 
@@ -23,7 +25,10 @@ export default function GenreFavorite() {
 
     const handleSubmit = () => {
         console.log("선택된 장르", favoriteGenre);
+        navigate('/artistfavorite')
     }
+
+
 
     return(<GenreFavoriteUI
         favoriteGenre={favoriteGenre}

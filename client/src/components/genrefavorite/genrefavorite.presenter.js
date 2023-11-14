@@ -25,7 +25,7 @@ export default function GenreFavoriteUI({
     "동요/태교",
     "클래식",
     "뉴에이지",
-    "CCM​",
+    "CCM"
   ];
 
   return (
