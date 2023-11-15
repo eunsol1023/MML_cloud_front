@@ -6,24 +6,29 @@ export default function GenreFavorite() {
     const navigate = useNavigate();
 
     const [favoriteGenre, setFavoriteGenre] = useState([]);
+    const [message, setMessage] = useState('');
+    const hideMessage = () => setMessage('')
 
     const onGenreSelect = (genre) => {
-        setFavoriteGenre(prevGenres => {
-            if (!prevGenres.includes(genre)) {
-                return [...prevGenres, genre];
-            }
-            return prevGenres;
-        })
-        
-    };
-
-    const handleGenreSelect = (genre) => {
-        if(favoriteGenre.length < 5) {
-            onGenreSelect(genre);
+        if (favoriteGenre.includes(genre)) {
+            setMessage('이미 선택한 장르입니다.');
+            return;
         }
+
+        if (favoriteGenre.length >= 5) {
+            setMessage('5개까지 선택 가능합니다.')
+            return;
+        }
+
+        setFavoriteGenre(prev => [...prev, genre]);
+        setMessage('');
     };
 
     const handleSubmit = () => {
+        if (favoriteGenre.length === 0) {
+            setMessage('최소 하나의 장르를 선택해 주세요.');
+            return;
+        }
         console.log("선택된 장르", favoriteGenre);
         navigate('/artistfavorite')
     }
@@ -32,8 +37,10 @@ export default function GenreFavorite() {
 
     return(<GenreFavoriteUI
         favoriteGenre={favoriteGenre}
-        onGenreSelect={handleGenreSelect}
+        onGenreSelect={onGenreSelect}
         onSubmit={handleSubmit}
+        message={message}
+        hideMessage={hideMessage}
         />
     );
 }
