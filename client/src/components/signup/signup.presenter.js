@@ -38,33 +38,37 @@ export default function SignupPageUI(props) {
     <div className={styles.body}>
       <div className={styles.sWrapper}>
         <h1 className={styles.sign}>회원가입</h1>
-        <div className={styles.inputBox}>
+        <div>
           <div className={styles.idBox}>
             <input 
-            onChange={props.onChangeEmail} 
-            className={styles.idInput}
+            onChange={props.onChangeUserId} 
+            className={styles.textInput}
             type="text" 
             id="userId" 
             placeholder="아이디" 
             />
           </div>
-          <div className={styles.psBox}>
-            <input
-              type="password"
-              id="password"
-              className={styles.psInput}
-              placeholder="비밀번호"
-              value={props.password}
-              onChange={props.handlePasswordChange}
-            />
-            <input
-              type="password"
-              id="passwordConfirm"
-              className={styles.psInput}
-              placeholder="비밀번호 확인"
-              value={props.passwordConfirm}
-              onChange={props.handlePasswordConfirmChange}
-            />
+          <div className={styles.pwBos}>
+            <div className={styles.idBox}>
+              <input
+                type="password"
+                id="password"
+                className={styles.textInput}
+                placeholder="비밀번호"
+                value={props.password}
+                onChange={props.handlePasswordChange}
+              />
+            </div>
+            <div className={styles.idBox}>
+              <input
+                type="password"
+                id="passwordConfirm"
+                className={styles.textInput}
+                placeholder="비밀번호 확인"
+                value={props.passwordConfirm}
+                onChange={props.handlePasswordConfirmChange}
+              />
+            </div>
           </div>
           <div className={styles.genderBox}>
               <label className={styles.newLabel}>

@@ -17,7 +17,7 @@ export default function LoginPage() {
     }
 
     const onChangePassword = (event) => {
-        /* 유저아이디 변경 */
+        /* 유저비밀번호  변경 */
         setPassword(event.target.value)
     }
 

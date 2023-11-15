@@ -81,7 +81,7 @@ export default function SignupPage() {
         //     console.log('error',error)
         // }
 
-        navigate('/main')
+        navigate('/genrefavorite')
     }  
 
   return (<SignupPageUI 
