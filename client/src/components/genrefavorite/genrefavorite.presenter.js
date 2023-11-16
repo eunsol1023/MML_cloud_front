@@ -67,21 +67,5 @@ export default function GenreFavoriteUI({ favoriteGenre=[], onGenreSelect, onSub
                 </div>
             </div> 
         </div>
-      </div>
-      <div className={styles.genreList}>
-        {genreOptions.map((genre, index) => (
-          <button
-            key={index}
-            onClick={() => onGenreSelect(genre)}
-            className={styles.genreButton}
-          >
-            {genre}
-          </button>
-        ))}
-      </div>
-      <button onClick={onSubmit} className={styles.submitButton}>
-        완료
-      </button>
-    </div>
-  );
+    );
 }
