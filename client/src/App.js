@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className={styles.body}>
-      {location.pathname  !== '/' || location.pathname  !== '/signup'  &&<Menubar />}
+      {!(location.pathname === '/' || location.pathname === '/signup') && <Menubar />}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<HomePage />} />

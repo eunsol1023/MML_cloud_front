@@ -11,7 +11,7 @@ function MenuBar() {
   useEffect (() => {
     console.log(location)
   },[])
-
+  
   const onClickHome = () => {
     navigate("/home");
   };
