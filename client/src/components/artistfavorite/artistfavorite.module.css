@@ -39,12 +39,12 @@ background-color: lightgray;
 .artistfavorite {
 position: relative;
 width: 1300px;
-height: 590px;
+height: 620px;
 margin: auto;
 margin-top: 40px;
 display: flex;
-flex-direction: column; /* 자식 요소들을 세로로 쌓기 위해 방향 변경 */
-align-items: center; /* 가운데 정렬 유지 */
+flex-direction: column; 
+align-items: center; 
 padding: 20px;
 border-radius: 14px;
 background-color: antiquewhite;

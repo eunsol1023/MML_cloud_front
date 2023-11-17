@@ -37,8 +37,8 @@ export default function GenreFavoriteUI({
   ];
 
   return (
-    <div className={styles.body}>
-      <div>
+    <div>
+      <div className={styles.errormassage}>
         {message && (
           <div className={styles.popup}>
             <div className={styles.popupContent}>
@@ -49,7 +49,9 @@ export default function GenreFavoriteUI({
             </div>
           </div>
         )}
+      </div>
 
+      <div>
         <div className={styles.wrapper}>
           <h1 className={styles.title}>선호하는 장르 선택</h1>
           <div className={styles.selectGenre}>
