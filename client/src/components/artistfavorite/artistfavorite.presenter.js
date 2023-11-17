@@ -42,7 +42,7 @@ export default function ArtistFavoriteUI({
           </button>
         </div>
 
-        <div className={styles.artistOptions}>
+        <div className={styles.artistBox}>
           <div className={styles.artistList}>
             {artists.map((artist, index) => (
               <button

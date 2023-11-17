@@ -50,7 +50,7 @@ export default function HomePageUI(props) {
     <div className={styles.body}>
       <div className={styles.playlist_box}>
         <div className={styles.playlist_container}>
-          <div className={styles.playlist_name}>사용자 청취기록 기반 리스트</div>
+          <div className={styles.playlist_name}>Song2vec</div>
           <span className={styles.playlist_info}>더보기</span>
         </div>
         <div className={styles.song_box}>
@@ -70,8 +70,9 @@ export default function HomePageUI(props) {
         </div>
       </div>
       <div className={styles.playlist_box}>
-        <div className={styles.playlist_name}>
-          사용자 연령, 성별 기반 리스트
+        <div className={styles.playlist_container}>
+          <div className={styles.playlist_name}>사용자 협업 필터링</div>
+          <span className={styles.playlist_info}>더보기</span>
         </div>
         <div className={styles.song_box}>
           {playlists.map((playlist, index) => (
@@ -90,7 +91,10 @@ export default function HomePageUI(props) {
         </div>
       </div>
       <div className={styles.playlist_box}>
-        <div className={styles.playlist_name}>나머지 개발중인 모델</div>
+      <div className={styles.playlist_container}>
+          <div className={styles.playlist_name}>콘텐츠 기반 필터링</div>
+          <span className={styles.playlist_info}>더보기</span>
+        </div>
         <div className={styles.song_box}>
           {playlists.map((playlist, index) => (
             <div key={index} className={styles.card}>

@@ -51,6 +51,7 @@
 .menuItem:hover {
   background-color: white;
   color :  #ffa458;
+  cursor: pointer;
 }
 
 /* 추가적인 스타일을 필요에 따라 여기에 추가합니다. */

@@ -38,7 +38,7 @@ background-color: lightgray;
 
 .artistfavorite {
 position: relative;
-width: 1300px;
+width: 1250px;
 height: 620px;
 margin: auto;
 margin-top: 40px;
@@ -85,7 +85,7 @@ list-style-type: none;
 font-size: 20px;
 }
 
-.artistOptions {
+.artistBox {
 margin-top: 20px;
 background-color: rgb(255, 203, 136);
 padding-top: 10px;
@@ -103,13 +103,14 @@ justify-content: center;
 
 .artistButton {
 background-color: white;
-width: 280px;
-height: 40px;
+width: 260px;
+height: 60px;
 padding: 8px 8px;
 border: solid 1px;
 border-radius: 10px;
 margin : 12px 12px 12px 12px;
 font-size: 17px;
+font-weight :600;
 cursor: pointer;
 transition: background-color 0.3s;
 white-space: nowrap;

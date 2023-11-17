@@ -51,9 +51,9 @@ export default function GenreFavoriteUI({
         )}
       </div>
 
-      <div>
-        <div className={styles.wrapper}>
-          <h1 className={styles.title}>선호하는 장르 선택</h1>
+      <div className={styles.genrefavorite}>
+        <div className={styles.genreSelectionContainer}>
+          <div className={styles.genretitle}>선호하는 장르 선택</div>
           <div className={styles.selectGenre}>
             <ul>
               {favoriteGenre.map((genre, index) => (
@@ -63,23 +63,23 @@ export default function GenreFavoriteUI({
               ))}
             </ul>
           </div>
-        </div>
-      </div>
-
-      <div className={styles.genreBox}>
-        <div className={styles.genreList}>
-          {genreOptions.map((genre, index) => (
-            <button
-              key={index}
-              onClick={() => onGenreSelect(genre)}
-              className={styles.genreButton}
-            >
-              {genre}
-            </button>
-          ))}
           <button onClick={onSubmit} className={styles.submitButton}>
             완료
           </button>
+        </div>
+
+        <div className={styles.genreBox}>
+          <div className={styles.genreList}>
+            {genreOptions.map((genre, index) => (
+              <button
+                key={index}
+                onClick={() => onGenreSelect(genre)}
+                className={styles.genreButton}
+              >
+                {genre}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
