@@ -1,8 +1,5 @@
 import styles from "./login.module.css";
-// import LoginPageUI from "./login.container";
 import React from "react";
-// import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 import idIcon from "./id.png";
 import imgIcon from "./img2.png";
 import psIcon from "./lock.png";
@@ -26,7 +23,14 @@ export default function LoginPageUI(props) {
         <div className={styles.inputBox}>
           <div className={styles.idBox}>
             <img src={idIcon} className={styles.idIcon} alt="id" />
-            <input className={styles.inputtext} type="text" id="ID" placeholder="아이디를 입력해주세요" />
+            <input
+              className={styles.inputtext}
+              type="text"
+              id="ID"
+              placeholder="아이디를 입력해주세요"
+              onChange={props.onChangeUserId}
+              value={props.userId}
+            />
           </div>
           <br />
           <div className={styles.psBox}>
@@ -36,11 +40,17 @@ export default function LoginPageUI(props) {
               id="PASSWORD"
               className={styles.inputtext}
               placeholder="비밀번호를 입력해주세요"
+              onChange={props.onChangePassword}
+              value={props.password}
             />
           </div>
         </div>
         <div className={styles.bBox}>
-          <button type="submit" className={styles.button}>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={props.onClickLogin}
+          >
             <span className={styles.logSpan}>로그인</span>
           </button>
         </div>
@@ -50,10 +60,9 @@ export default function LoginPageUI(props) {
             className={styles.signButton}
             onClick={handleSignUpClick}
           >
-            <span 
-                onClick={props.onClickRegister} 
-                className={styles.signSpan}>
-                    회원가입하러 가기 →</span>
+            <span onClick={props.onClickRegister} className={styles.signSpan}>
+              회원가입하러 가기 →
+            </span>
           </button>
         </div>
       </div>

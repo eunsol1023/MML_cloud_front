@@ -3,14 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 export default function HomaPage() {
   const navigate = useNavigate();
+  const onClickList = () => {
+    navigate('/playlist'); // '/playlist' 경로로 이동
+};
 
-  const onClickSignup = () => {
-    navigate("/signup");
-  };
-  
-  const onClickLogin = () => {
-    navigate("/login")
-  };
-
-  return <HomePageUI onClickSignup={onClickSignup} />;
+  return <HomePageUI/>;
 }

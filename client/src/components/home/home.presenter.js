@@ -45,64 +45,69 @@ const playlists = [
 ];
 
 export default function HomePageUI(props) {
+
   return (
-    // <div className={styles.body}>
-      <div className={styles.body}>
-        <div className={styles.playlist_box}>
+    <div className={styles.body}>
+      <div className={styles.playlist_box}>
+        <div className={styles.playlist_container}>
           <div className={styles.playlist_name}>사용자 청취기록 기반 리스트</div>
-          <div className={styles.song_box}>
-            {playlists.map((playlist, index) => (
-              <div key={index} className={styles.card}>
-                <img
-                  src={playlist.image}
-                  alt={playlist.title}
-                  className={styles.cardImage}
-                />
-                <div className={styles.cardContent}>
-                  <h3>{playlist.title}</h3>
-                  <p>{playlist.artist}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <span className={styles.playlist_info}>더보기</span>
         </div>
-        <div className={styles.playlist_box}>
-          <div className={styles.playlist_name}>사용자 연령, 성별 기반 리스트</div>
-          <div className={styles.song_box}>
-            {playlists.map((playlist, index) => (
-              <div key={index} className={styles.card}>
-                <img
-                  src={playlist.image}
-                  alt={playlist.title}
-                  className={styles.cardImage}
-                />
-                <div className={styles.cardContent}>
-                  <h3>{playlist.title}</h3>
-                  <p>{playlist.artist}</p>
-                </div>
+        <div className={styles.song_box}>
+          {playlists.map((playlist, index) => (
+            <div key={index} className={styles.card}>
+              <img
+                src={playlist.image}
+                alt={playlist.title}
+                className={styles.cardImage}
+              />
+              <div className={styles.cardContent}>
+                <h3>{playlist.title}</h3>
+                <p>{playlist.artist}</p>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className={styles.playlist_box}>
-          <div className={styles.playlist_name}>나머지 개발중인 모델</div>
-          <div className={styles.song_box}>
-            {playlists.map((playlist, index) => (
-              <div key={index} className={styles.card}>
-                <img
-                  src={playlist.image}
-                  alt={playlist.title}
-                  className={styles.cardImage}
-                />
-                <div className={styles.cardContent}>
-                  <h3>{playlist.title}</h3>
-                  <p>{playlist.artist}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
+      <div className={styles.playlist_box}>
+        <div className={styles.playlist_name}>
+          사용자 연령, 성별 기반 리스트
+        </div>
+        <div className={styles.song_box}>
+          {playlists.map((playlist, index) => (
+            <div key={index} className={styles.card}>
+              <img
+                src={playlist.image}
+                alt={playlist.title}
+                className={styles.cardImage}
+              />
+              <div className={styles.cardContent}>
+                <h3>{playlist.title}</h3>
+                <p>{playlist.artist}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.playlist_box}>
+        <div className={styles.playlist_name}>나머지 개발중인 모델</div>
+        <div className={styles.song_box}>
+          {playlists.map((playlist, index) => (
+            <div key={index} className={styles.card}>
+              <img
+                src={playlist.image}
+                alt={playlist.title}
+                className={styles.cardImage}
+              />
+              <div className={styles.cardContent}>
+                <h3>{playlist.title}</h3>
+                <p>{playlist.artist}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
     // </div>
   );
 }

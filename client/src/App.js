@@ -8,8 +8,7 @@ import Playlist from "./components/playlist/playlist.container.js";
 import styles from "./App.module.css";
 import Login from "./components/login/login.container";
 import ArtistFavorite from "./components/artistfavorite/artistfavorite.container.js";
-import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js";
-
+import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js"
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -28,7 +27,7 @@ function App() {
 
   return (
     <div className={styles.body}>
-      {!(location.pathname === '/' || location.pathname === '/signup') && <Menubar />}
+      {!(location.pathname === '/' || location.pathname === '/signup'|| location.pathname === '/artistfavorite'|| location.pathname === '/genrefavorite') && <Menubar />}
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<HomePage />} />

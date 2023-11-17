@@ -8,7 +8,7 @@ export default function SignupPageUI(props) {
 
   const yearOptions = [];
   const currentYear = new Date().getFullYear();
-  for (let year = 1940; year <= currentYear; year++) {
+  for (let year = 1985; year <= currentYear; year++) {
     yearOptions.push(
       <option key={year} value={year}>
         {year}년
@@ -75,7 +75,7 @@ export default function SignupPageUI(props) {
                 <input className={styles.newMInput}
                   type="radio"
                   name="gender"
-                  value="male"
+                  value="M"
                   onChange={props.handleGenderChange}
                 />
                 남자                
@@ -84,7 +84,7 @@ export default function SignupPageUI(props) {
                 <input className={styles.newFInput}
                 type="radio"
                 name="gender"
-                value="female"
+                value="F"
                 onChange={props.handleGenderChange}
                 />
                 여자                

@@ -36,10 +36,10 @@ function MenuBar() {
       </div>
       <div className={styles.menubox}>
         <a className={styles.menuItem} onClick={onClickRedirecLogin}>
-          Login
+          Logout
         </a>
         <a className={styles.menuItem} onClick={onClickRedirectPlaylist}>
-          Playlsit
+          Playlist
         </a>
         {/* <a href="#services" className={styles.menuItem}>
           Services

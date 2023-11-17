@@ -1,4 +1,139 @@
-.body {
-    margin-left: 280px;
-  }
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 25px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background-color: white;
+  border: solid 1px transparent;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  text-align: center;
+  width: 80%;
+}
+
+.hideMessage {
+text-align: center;
+border: solid 1px;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s;
+padding: 5px;
+}
+
+.hideMessage:hover {
+background-color: lightgray;
+}
+
+.artistfavorite {
+position: relative;
+width: 1300px;
+height: 590px;
+margin: auto;
+margin-top: 40px;
+display: flex;
+flex-direction: column; /* 자식 요소들을 세로로 쌓기 위해 방향 변경 */
+align-items: center; /* 가운데 정렬 유지 */
+padding: 20px;
+border-radius: 14px;
+background-color: antiquewhite;
+}
+
+.artistSelectionContainer {
+  /* margin-top: 70px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 1100px /* 혹은 부모 요소의 너비에 맞게 조정 */
   
+}
+
+.artisttitle {
+  position: relative; 
+  font-size: 30px; 
+  margin-bottom: 20px; 
+  /* z-index: 1000; */
+}
+
+
+.selectArtist {
+height: 40px;
+margin: auto;
+font-size: 12px;
+color: rgb(0, 0, 0);
+text-align: center;
+
+}
+
+.artistItem {
+float: left;
+padding-left: 50px;
+text-align: center;
+list-style-type: none;
+font-size: 20px;
+}
+
+.artistOptions {
+margin-top: 20px;
+background-color: rgb(255, 203, 136);
+padding-top: 10px;
+padding-bottom: 20px;
+height: 437px;
+border-radius: 10px;
+overflow-y: auto;
+}
+
+.artistList { 
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.artistButton {
+background-color: white;
+width: 280px;
+height: 40px;
+padding: 8px 8px;
+border: solid 1px;
+border-radius: 10px;
+margin : 12px 12px 12px 12px;
+font-size: 17px;
+cursor: pointer;
+transition: background-color 0.3s;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.artistButton:hover {
+background-color: lightgray;
+}
+
+.submitButton {
+background-color: green;
+color: white;
+height: 40px;
+border: solid 1px;
+border-radius: 10px;
+padding: 10px 20px;
+font-size: 15px;
+cursor: pointer;
+margin-top: 25px;
+transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+background-color: darkgreen;
+}
