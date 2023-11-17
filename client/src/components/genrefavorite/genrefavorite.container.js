@@ -33,6 +33,10 @@ export default function GenreFavorite() {
         navigate('/artistfavorite')
     }
 
+    const cancleGenre = () => {
+        setFavoriteGenre([])
+    }
+
 
 
     return(<GenreFavoriteUI
@@ -41,6 +45,7 @@ export default function GenreFavorite() {
         onSubmit={handleSubmit}
         message={message}
         hideMessage={hideMessage}
+        cancleGenre = {cancleGenre}
         />
     );
 }

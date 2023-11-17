@@ -23,16 +23,13 @@ export default function LoginPage() {
 
     const onClickLogin = async () => {
         try {
-            const response = await axios.post('백엔드에서 주는 API', {
-                userId: userId, // 사용자가 입력한 userId 사용
+            const response = await axios.post('http://15.164.46.35:8000/user/login/', {
+                username: userId, // 사용자가 입력한 userId 사용
                 password: password // 사용자가 입력한 password 사용
             });
 
-            if (response.status === 201) {
-                alert('로그인완료');
-                navigate('/main');
-            } else {
-                alert(response.message);
+            if (response.status === 200) {
+                navigate('/home');
             }
 
         } catch (error) {
