@@ -28,10 +28,10 @@ function MenuBar() {
   const onClickLogout = async () => {
     try {
       const response = await axios.post(
-        "http://api.cloudmml.com:8000/user/logout/",
-        {
-          withCredentials: true, // 쿠키를 포함하도록 설정
-        }
+        "http://api.cloudmml.com:8000/user/logout/"
+        // {
+        //   withCredentials: true, // 쿠키를 포함하도록 설정
+        // }
       ); // 서버의 로그아웃 엔드포인트를 가정
 
       if (response.status === 200) {

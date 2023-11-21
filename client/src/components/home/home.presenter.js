@@ -32,7 +32,14 @@ const playlists = [
     artist: "aespa",
     image:
       "https://cdnimg.melon.co.kr/cm2/album/images/113/62/544/11362544_20231110142622_1000.jpg?YUV444-90",
-  }
+  },
+  {
+    id: 5,
+    title: "You & Me",
+    artist: "제니 (JENNIE)",
+    image:
+      "https://cdnimg.melon.co.kr/cm2/album/images/113/39/556/11339556_20231005170424_1000.jpg?9fa72785dcda82b88b47f847cb08dbd8/melon/quality/80/optimize",
+  },
 ];
 
 export default function HomePageUI(props) {

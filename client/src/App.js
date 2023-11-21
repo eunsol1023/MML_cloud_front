@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {BrowserRouter as Router,  Route,  Routes,  useLocation,} from "react-router-dom";
-// import { useState } from "react";
-import styles from "./App.module.css";
 import Menubar from "./components/menubar/menubar.js";
 import Login from "./components/login/login.container";
 import SignupPage from "./components/signup/signup.container.js";
@@ -10,24 +8,19 @@ import Playlist from "./components/playlist/playlist.container.js";
 import PlayListView from "./components/playlistview/playlistview.container.js"
 import ArtistFavorite from "./components/artistfavorite/artistfavorite.container.js";
 import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js"
-// import logo from './logo.svg';
-// import './App.css';
+import axios from "axios";
+
 
 function App() {
   const location = useLocation();
 
   console.log(location);
 
-  // const [url, setUrl] = useState("");
+  axios.defaults.withCredentials = true;
 
-  // const onChangeUrl = () => {
-
-  //   setUrl(window.location.href.slice(21));
-
-  // };
 
   return (
-    <div className={styles.body}>
+    <div>
       {!(location.pathname === '/' || location.pathname === '/signup'|| location.pathname === '/artistfavorite'|| location.pathname === '/genrefavorite') && <Menubar />}
       <Routes>
         <Route path="/" element={<Login />} />
