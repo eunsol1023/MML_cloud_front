@@ -53,15 +53,15 @@
 
 .inputtext {
   text-align: left;
-  width: 250px;
+  width: 245px;
   height: 40px;
   border: none;
   border-bottom: solid 2px coral;
   background: none;
   margin-bottom: 10px;
-  color: #868b94;
+  padding-left: 5px;
+  font-size: medium;
 }
-
 .inputtext:focus {
   outline: none;
 }

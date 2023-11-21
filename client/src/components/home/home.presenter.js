@@ -90,27 +90,7 @@ export default function HomePageUI(props) {
           ))}
         </div>
       </div>
-      <div className={styles.playlist_box}>
-      <div className={styles.playlist_container}>
-          <div className={styles.playlist_name}>콘텐츠 기반 필터링</div>
-          <span className={styles.playlist_info}>더보기</span>
-        </div>
-        <div className={styles.song_box}>
-          {playlists.map((playlist, index) => (
-            <div key={index} className={styles.card}>
-              <img
-                src={playlist.image}
-                alt={playlist.title}
-                className={styles.cardImage}
-              />
-              <div className={styles.cardContent}>
-                <h3>{playlist.title}</h3>
-                <p>{playlist.artist}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      
     </div>
     // </div>
   );

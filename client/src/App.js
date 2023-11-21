@@ -4,7 +4,7 @@ import {BrowserRouter as Router,  Route,  Routes,  useLocation,} from "react-rou
 import Menubar from "./components/menubar/menubar.js";
 import HomePage from "./components/home/home.container.js";
 import SignupPage from "./components/signup/signup.container.js";
-import Playlist from "./components/playlist/playlist.container.js";
+import Playlist from "./components/playlistview/playlistview.container.js";
 import styles from "./App.module.css";
 import Login from "./components/login/login.container";
 import ArtistFavorite from "./components/artistfavorite/artistfavorite.container.js";
