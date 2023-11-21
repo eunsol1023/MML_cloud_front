@@ -10,15 +10,13 @@ export default function LoginPageUI(props) {
   //   // 로그인 했을때
   // };
 
-
-
   return (
     <div className={styles.body}>
       <div className={styles.wrapper}>
         <div className={styles.imgBox}>
           <img src={imgIcon} className={styles.imgIcon} alt="icon" />
         </div>
-        <div className={styles.inputBox}>
+        <form onSubmit={props.onClickLogin} className={styles.inputBox}>
           <div className={styles.idBox}>
             <img src={idIcon} className={styles.idIcon} alt="id" />
             <input
@@ -42,16 +40,16 @@ export default function LoginPageUI(props) {
               value={props.password}
             />
           </div>
-        </div>
-        <div className={styles.bBox}>
-          <button
-            type="button"
-            className={styles.button}
-            onClick={props.onClickLogin}
-          >
-            <span className={styles.logSpan}>로그인</span>
-          </button>
-        </div>
+          <div className={styles.bBox}>
+            <button
+              type="submit"
+              className={styles.button}
+            >
+              <span className={styles.logSpan}>로그인</span>
+            </button>
+          </div>
+        </form>
+
         <div className={styles.signUpBox}>
           <button
             type="button"

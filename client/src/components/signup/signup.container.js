@@ -70,7 +70,7 @@ export default function SignupPage() {
       const age_range = `${birthYear}-${birthMonth.padStart(2,"0")}-${birthDay.padStart(2,"0")}`;
 
       const response = await axios.post(
-        "http://15.164.46.35:8000/user/signup/",
+        "http://api.cloudmml.com:8000/user/signup/",
         {
           username: userid,
           password:password,
