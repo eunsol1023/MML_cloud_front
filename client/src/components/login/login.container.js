@@ -35,6 +35,7 @@ export default function LoginPage() {
             });
 
             if (response.status === 200) {
+                console.log(response)
                 navigate('/home');
             }
 

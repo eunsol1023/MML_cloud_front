@@ -10,9 +10,9 @@ function MenuBar() {
 
   const location = useLocation(); 
   
-  useEffect (() => {
-    console.log(location)
-  },[])
+  // useEffect (() => {
+  //   console.log(location)
+  // },[])
   
   const onClickHome = () => {
     navigate("/home");
