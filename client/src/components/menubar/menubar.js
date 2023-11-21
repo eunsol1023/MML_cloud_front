@@ -29,7 +29,7 @@ function MenuBar() {
     try {
       const response = await axios.post(
         "http://api.cloudmml.com:8000/user/logout/",
-        null, // 요청 본문 (빈 객체)
+        {}, // 요청 본문 (빈 객체)
         { withCredentials: true } // 쿠키를 포함하도록 설정하는 옵션
       );
 
