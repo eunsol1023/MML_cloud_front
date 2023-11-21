@@ -41,7 +41,7 @@ function MenuBar() {
         {}, // 요청 본문 (빈 객체)
         { withCredentials: true,
         headers: {
-          'X-CSRFToken' : csrftoken
+          'X-CSRFToken' : csrfToken
         } } // 쿠키를 포함하도록 설정하는 옵션
       );
 
