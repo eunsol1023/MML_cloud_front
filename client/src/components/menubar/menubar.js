@@ -34,6 +34,7 @@ function MenuBar() {
   const onClickLogout = async () => {
     try {
       const csrfToken = getCsrfToken();
+      console.log('1')
       console.log('CSRF Token:', csrfToken);
       const response = await axios.post(
         "http://api.cloudmml.com:8000/user/logout/",
