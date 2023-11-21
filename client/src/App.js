@@ -8,7 +8,7 @@ import Playlist from "./components/playlist/playlist.container.js";
 import PlayListView from "./components/playlistview/playlistview.container.js"
 import ArtistFavorite from "./components/artistfavorite/artistfavorite.container.js";
 import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js"
-import axios from "axios";
+// import axios from "axios";
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
 
   console.log(location);
 
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
 
 
   return (

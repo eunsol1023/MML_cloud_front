@@ -45,21 +45,21 @@ const playlists = [
 export default function HomePageUI(props) {
   {
     return (
-      <div className={styles.body}>
-        <div className="input-group">
+      <div className={styles.home_body}>
+        <div className={styles.home_search}>
           <form
             type="search"
-            className="form-control rounded"
+            className={styles.home_form}
             placeholder="상황 및 기분 입력"
             // onChange={onChange}
           />
-          <button onClick={props.onClickSearch} className={styles.listsearch}>
+          <button onClick={props.onClickSearch} className={styles.home_searchbutton}>
             검색
           </button>
         </div>
-        <div className={styles.playlist_box}>
-          <div className={styles.playlist_container}>
-            <div className={styles.playlist_name}>Song2vec</div>
+        <div className={styles.home_playlist}>
+          <div className={styles.home_playlist_container}>
+            <div className={styles.home_playlist_name}>Song2vec</div>
             <span
               className={styles.playlist_info}
               onClick={props.onClickPlayListView}
@@ -67,20 +67,22 @@ export default function HomePageUI(props) {
               더보기
             </span>
           </div>
-          <div className={styles.song_box}>
+          <div className={styles.home_card_container}>
+          <div className={styles.home_song_card}>
             {playlists.map((playlist, index) => (
-              <div key={index} className={styles.card}>
+              <div key={index} className={styles.home_card}>
                 <img
                   src={playlist.image}
                   alt={playlist.title}
-                  className={styles.cardImage}
+                  className={styles.home_cardImage}
                 />
-                <div className={styles.cardContent}>
+                <div className={styles.home_cardContent}>
                   <h3>{playlist.title}</h3>
                   <p>{playlist.artist}</p>
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
         

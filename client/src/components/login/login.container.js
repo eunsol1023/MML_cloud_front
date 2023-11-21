@@ -33,10 +33,10 @@ export default function LoginPage() {
         {
           username: userId, // 사용자가 입력한 userId 사용
           password: password, // 사용자가 입력한 password 사용
+        },
+        {
+          withCredentials: true, // 쿠키를 포함하도록 설정
         }
-        // {
-        //   withCredentials: true, // 쿠키를 포함하도록 설정
-        // }
       );
 
       if (response.status === 200) {
