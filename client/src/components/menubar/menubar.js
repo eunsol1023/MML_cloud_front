@@ -27,10 +27,15 @@ function MenuBar() {
 
   const onClickLogout = async () => {
     try {
+      const csrfToken = getCsrfToken();
+      console.log('CSRF Token:', csrfToken);
       const response = await axios.post(
         "http://api.cloudmml.com:8000/user/logout/",
         {}, // 요청 본문 (빈 객체)
-        { withCredentials: true } // 쿠키를 포함하도록 설정하는 옵션
+        { withCredentials: true,
+        headers: {
+          'X-CSRFToken' : csrfToken
+        } } // 쿠키를 포함하도록 설정하는 옵션
       );
 
       if (response.status === 200) {
