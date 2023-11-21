@@ -39,29 +39,25 @@ const playlists = [
   },
 ];
 
-const PlaylistMorePage = () => {
+export default function PlayListViewUI() {
   return (
     <div className={styles.body}>
       <div className={styles.playlisttitle}>플레이리스트 이름</div>
       <div className={styles.playlistContainer}>
-        
-          {playlists.map((playlist) => (
-            <div key={playlist.id} className={styles.playlistItem}>
-              <div className={styles.playlistImageBox}>
-                <img
-                  src={playlist.image}
-                  alt={playlist.title}
-                  className={styles.playlistImage}
-                />
-              </div>
-              <div className={styles.title}>{playlist.title}</div>
-              <div className={styles.artist}>{playlist.artist}</div>
+        {playlists.map((playlist) => (
+          <div key={playlist.id} className={styles.playlistItem}>
+            <div className={styles.playlistImageBox}>
+              <img
+                src={playlist.image}
+                alt={playlist.title}
+                className={styles.playlistImage}
+              />
             </div>
-          ))}
-        </div>
+            <div className={styles.title}>{playlist.title}</div>
+            <div className={styles.artist}>{playlist.artist}</div>
+          </div>
+        ))}
       </div>
-
+    </div>
   );
-};
-
-export default PlaylistMorePage;
+}

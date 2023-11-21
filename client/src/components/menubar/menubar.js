@@ -18,20 +18,20 @@ function MenuBar() {
     navigate("/home");
   };
 
-  const onClickRedirecLogin = () => {
-    navigate("/");
+  const onClickPlayList = () => {
+    navigate("/playlist");
   };
 
-  const onClickRedirectPlaylist = () => {
-    navigate("/playlist");
+  const onClickPlayListView = () => {
+    navigate("/playlistview");
   };
 
   const onClickLogout = async () => {
     try {
-      response = await axios.post('/logout_user'); // 서버의 로그아웃 엔드포인트를 가정
+     const  response = await axios.post('/logout_user'); // 서버의 로그아웃 엔드포인트를 가정
       // 로그아웃 성공 후 처리, 예: 로그인 페이지로 리디렉션
-      if(response.status === 200){
-        alert("로그아웃 성공")
+      if(response.status === 200){ 
+        alert("로그인 성공")
         navigate("/");
       }
       
@@ -53,18 +53,19 @@ function MenuBar() {
         />
       </div>
       <div className={styles.menubox}>
+
+        <a className={styles.menuItem} onClick={onClickHome}>
+          Home
+        </a>
+        <a className={styles.menuItem} onClick={onClickPlayList}>
+          PlayList
+        </a>
+        <a className={styles.menuItem} onClick={onClickPlayListView}>
+          PlayLiseView
+        </a>
         <a className={styles.menuItem} onClick={onClickLogout}>
           Logout
         </a>
-        <a className={styles.menuItem} onClick={onClickRedirectPlaylist}>
-          Playlist
-        </a>
-        {/* <a href="#services" className={styles.menuItem}>
-          Services
-        </a>
-        <a href="#contact" className={styles.menuItem}>
-          Contact
-        </a> */}
       </div>
     </nav>
   );

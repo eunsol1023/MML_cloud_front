@@ -1,7 +1,6 @@
-import PlaylistUI from "./playlistview.container";
+import PlayListViewUI from "./playlistview.presenter";
 
 export default function Playlist(){
-    return <PlaylistUI>
-        
-    </PlaylistUI>
+    return <PlayListViewUI/>
+
 }
