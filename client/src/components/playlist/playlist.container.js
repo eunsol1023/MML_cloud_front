@@ -1,11 +1,11 @@
-import HomePageUI from "./home.presenter";
+import PlayListUI from "./playlist.presenter";
 import { useNavigate } from "react-router-dom";
 
-export default function HomaPage() {
+export default function Playlsit() {
   const navigate = useNavigate();
-  const onClickList = () => {
-    navigate('/playlist'); // '/playlist' 경로로 이동
+  const onClickPlayListView = () => {
+    navigate('/playlistview'); // '/playlist' 경로로 이동
 };
 
-  return <HomePageUI/>;
+  return <PlayListUI/>;
 }

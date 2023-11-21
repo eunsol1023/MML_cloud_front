@@ -1,5 +1,4 @@
 import styles from "./home.module.css";
-// import styles from './MainLayout.module.css';
 
 const playlists = [
   {
@@ -46,52 +45,74 @@ const playlists = [
 
 export default function HomePageUI(props) {
 
-  return (
-    <div className={styles.body}>
-      <div className={styles.playlist_box}>
-        <div className={styles.playlist_container}>
-          <div className={styles.playlist_name}>Song2vec</div>
-          <span className={styles.playlist_info}>더보기</span>
+  {
+    return (
+      <div className={styles.body}>
+        <div className="input-group">
+          <input
+            type="search"
+            className="form-control rounded"
+            placeholder="상황 및 기분 입력"
+            // onChange={onChange}
+          />
+          <button onClick={props.onClickSearch} className={styles.listsearch}>
+            검색
+          </button>
         </div>
-        <div className={styles.song_box}>
-          {playlists.map((playlist, index) => (
-            <div key={index} className={styles.card}>
-              <img
-                src={playlist.image}
-                alt={playlist.title}
-                className={styles.cardImage}
-              />
-              <div className={styles.cardContent}>
-                <h3>{playlist.title}</h3>
-                <p>{playlist.artist}</p>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_container}>
+            <div className={styles.playlist_name}>Song2vec</div>
+            <span
+              className={styles.playlist_info}
+              onClick={props.onClickPlayListView}
+            >
+              더보기
+            </span>
+          </div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_container}>
+            <div className={styles.playlist_name}>사용자 협업 필터링</div>
+            <span
+              className={styles.playlist_info}
+              onClick={props.onClickPlayListView}
+            >
+              더보기
+            </span>
+          </div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className={styles.playlist_box}>
-        <div className={styles.playlist_container}>
-          <div className={styles.playlist_name}>사용자 협업 필터링</div>
-          <span className={styles.playlist_info}>더보기</span>
-        </div>
-        <div className={styles.song_box}>
-          {playlists.map((playlist, index) => (
-            <div key={index} className={styles.card}>
-              <img
-                src={playlist.image}
-                alt={playlist.title}
-                className={styles.cardImage}
-              />
-              <div className={styles.cardContent}>
-                <h3>{playlist.title}</h3>
-                <p>{playlist.artist}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-    </div>
-    // </div>
-  );
+      // </div>
+    );
+  }
 }

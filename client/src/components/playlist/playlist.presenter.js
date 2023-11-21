@@ -1,5 +1,4 @@
-import styles from "./home.module.css";
-// import styles from './MainLayout.module.css';
+import styles from "./playlist.module.css";
 
 const playlists = [
   {
@@ -44,14 +43,18 @@ const playlists = [
   },
 ];
 
-export default function HomePageUI(props) {
-
+export default function PlayListUI(onClickPlayListView) {
   return (
     <div className={styles.body}>
       <div className={styles.playlist_box}>
         <div className={styles.playlist_container}>
           <div className={styles.playlist_name}>Song2vec</div>
-          <span className={styles.playlist_info}>더보기</span>
+          <span
+            className={styles.playlist_info}
+            onClickPlayListView={onClickPlayListView}
+          >
+            더보기
+          </span>
         </div>
         <div className={styles.song_box}>
           {playlists.map((playlist, index) => (
@@ -90,7 +93,6 @@ export default function HomePageUI(props) {
           ))}
         </div>
       </div>
-      
     </div>
     // </div>
   );

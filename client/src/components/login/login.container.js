@@ -21,11 +21,17 @@ export default function LoginPage() {
         navigate('/signup');
     }
 
+    const onHandleSignUpClick = () => {
+        // 회원가입 할 때
+      };
+
     const onClickLogin = async () => {
         try {
             const response = await axios.post('http://15.164.46.35:8000/user/login/', {
                 username: userId, // 사용자가 입력한 userId 사용
                 password: password // 사용자가 입력한 password 사용
+            }, {
+                withCredentials: true  // 쿠키를 포함하도록 설정
             });
 
             if (response.status === 200) {
@@ -45,6 +51,7 @@ export default function LoginPage() {
             onChangePassword={onChangePassword}
             onClickLogin={onClickLogin}
             onClickRegister={onClickRegister}
+            onHandleSignUpClick={onHandleSignUpClick}
         />
     );
 }

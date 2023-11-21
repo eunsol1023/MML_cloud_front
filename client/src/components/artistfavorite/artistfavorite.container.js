@@ -48,7 +48,7 @@ export default function ArtistFavorite() {
             return;
         }
         console.log("선택된 아티스트", favoriteArtists);
-        navigate('/home'); 
+        navigate('/'); 
     };
 
     const hideMessage = () => setMessage('');

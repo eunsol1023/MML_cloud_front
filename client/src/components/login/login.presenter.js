@@ -5,14 +5,12 @@ import imgIcon from "./img2.png";
 import psIcon from "./lock.png";
 
 export default function LoginPageUI(props) {
-  const handleLoginSubmit = (event) => {
-    event.preventDefault();
-    // 로그인 했을때
-  };
+  // const handleLoginSubmit = (event) => {
+  //   event.preventDefault();
+  //   // 로그인 했을때
+  // };
 
-  const handleSignUpClick = () => {
-    // 회원가입 할 때
-  };
+
 
   return (
     <div className={styles.body}>
@@ -58,7 +56,7 @@ export default function LoginPageUI(props) {
           <button
             type="button"
             className={styles.signButton}
-            onClick={handleSignUpClick}
+            onClick={props.handleSignUpClick}
           >
             <span onClick={props.onClickRegister} className={styles.signSpan}>
               회원가입하러 가기 →

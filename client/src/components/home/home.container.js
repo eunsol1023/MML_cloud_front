@@ -3,9 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 export default function HomaPage() {
   const navigate = useNavigate();
-  const onClickList = () => {
-    navigate('/playlist'); // '/playlist' 경로로 이동
-};
+  const onClickSearch = () => {
 
-  return <HomePageUI/>;
+};
+  const onClickPlayListView = () => {
+    navigate('/playlistview');
+  }
+
+  return <HomePageUI
+    onClickSearch={onClickSearch}
+    onClickPlayListView={onClickPlayListView}
+    />;
 }
