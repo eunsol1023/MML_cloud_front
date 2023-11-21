@@ -40,7 +40,7 @@ export default function HomePageUI(props) {
     return (
       <div className={styles.body}>
         <div className="input-group">
-          <input
+          <form
             type="search"
             className="form-control rounded"
             placeholder="상황 및 기분 입력"

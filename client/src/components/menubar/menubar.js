@@ -28,10 +28,10 @@ function MenuBar() {
 
   const onClickLogout = async () => {
     try {
-     const  response = await axios.post('/logout_user'); // 서버의 로그아웃 엔드포인트를 가정
+     const  response = await axios.post('http://15.164.46.35:8000/user/logout/'); // 서버의 로그아웃 엔드포인트를 가정
       // 로그아웃 성공 후 처리, 예: 로그인 페이지로 리디렉션
       if(response.status === 200){ 
-        alert("로그인 성공")
+        alert("로그아웃 성공")
         navigate("/");
       }
       
@@ -61,7 +61,7 @@ function MenuBar() {
           PlayList
         </a>
         <a className={styles.menuItem} onClick={onClickPlayListView}>
-          PlayLiseView
+          PlayListView
         </a>
         <a className={styles.menuItem} onClick={onClickLogout}>
           Logout
