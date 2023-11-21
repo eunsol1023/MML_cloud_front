@@ -4,6 +4,12 @@ import logoImage from "./logo.jpeg";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
+function getCsrfToken() {
+  const cookies = document.cookie.split('; ');
+  const csrfCookie = cookies.find(cookie => cookie.startsWith('csrfToken='));
+  return csrfCookie ? csrfCookie.split('=')[1] : null;
+}
+
 function MenuBar() {
   const navigate = useNavigate();
 
