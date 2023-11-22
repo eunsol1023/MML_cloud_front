@@ -37,7 +37,7 @@ function MenuBar() {
   const onClickLogout = async () => {
     const refreshToken = localStorage.getItem("refresh_token");
     try {
-      await axios.post("https://api.cloudmml.com/logout", {
+      await axios.post("http://api.cloudmml.com:8000/user/logout", {
         // Ensure correct API endpoint
         refresh_token: refreshToken,
       });
