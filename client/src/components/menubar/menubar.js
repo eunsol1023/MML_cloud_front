@@ -42,7 +42,7 @@ function MenuBar() {
       console.log("CSRF Token:", csrfToken);
 
       const response = await axios.post(
-        "http://api.cloudmml.com:8000/user/logout/",
+        "http://.cloudmml.com:8000/user/logout/",
         {}, // 요청 본문 (빈 객체)
         {
           withCredentials: true,
