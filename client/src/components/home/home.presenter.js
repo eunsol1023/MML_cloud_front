@@ -63,31 +63,66 @@ export default function HomePageUI(props) {
             검색
           </button>
         </div>
-        <div className={styles.home_playlist}>
-          <div className={styles.home_playlist_container}>
-            <div className={styles.home_playlist_name}>Song2vec</div>
-            <span
-              className={styles.playlist_info}
-              onClick={props.onClickPlayListView}
-            >
-              더보기
-            </span>
-          </div>
-          <div className={styles.home_card_container}>
-            <div className={styles.home_song_card}>
-              {playlists.map((playlist, index) => (
-                <div key={index} className={styles.home_card}>
-                  <img
-                    src={playlist.image}
-                    alt={playlist.title}
-                    className={styles.home_cardImage}
-                  />
-                  <div className={styles.home_cardContent}>
-                    <h3>{playlist.title}</h3>
-                    <p>{playlist.artist}</p>
+        <div className={styles.home_playlist_area}>
+          <div className={styles.home_playlist}>
+            <div className={styles.home_playlist_container}>
+              <div className={styles.home_playlist_name}>Song2vec</div>
+              <span
+                className={styles.playlist_info}
+                onClick={props.onClickPlayListView}
+              >
+                더보기
+              </span>
+            </div>
+            <div className={styles.home_card_container}>
+              <div className={styles.home_song_card}>
+                {playlists.map((playlist, index) => (
+                  <div key={index} className={styles.home_abc}>
+                    <div className={styles.home_card}>
+                      <img
+                        src={playlist.image}
+                        alt={playlist.title}
+                        className={styles.home_cardImage}
+                      />
+                      <div className={styles.home_cardContent}>
+                        <h3>{playlist.title}</h3>
+                        <p>{playlist.artist}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.home_playlist}>
+            <div className={styles.home_playlist_container}>
+              <div className={styles.home_playlist_name}>Song2vec</div>
+              <span
+                className={styles.playlist_info}
+                onClick={props.onClickPlayListView}
+              >
+                더보기
+              </span>
+            </div>
+            <div className={styles.home_card_container}>
+              <div className={styles.home_song_card}>
+                {playlists.map((playlist, index) => (
+                  <div key={index} className={styles.home_abc}>
+                    <div className={styles.home_card}>
+                      <img
+                        src={playlist.image}
+                        alt={playlist.title}
+                        className={styles.home_cardImage}
+                      />
+                      <div className={styles.home_cardContent}>
+                        <h3>{playlist.title}</h3>
+                        <p>{playlist.artist}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

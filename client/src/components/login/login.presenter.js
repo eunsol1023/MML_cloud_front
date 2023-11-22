@@ -1,14 +1,18 @@
 import styles from "./login.module.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import idIcon from "./id.png";
 import imgIcon from "./img2.png";
 import psIcon from "./lock.png";
 
 export default function LoginPageUI(props) {
-  // const handleLoginSubmit = (event) => {
-  //   event.preventDefault();
-  //   // 로그인 했을때
-  // };
+  const [csrfToken, setCsrfToken] = useState("");
+
+  useEffect(() => {}, []);
+
+  const handleLoginSubmit = (event) => {
+    event.preventDefault();
+    props.onClickLogin(event, csrfToken);
+  };
 
   return (
     <div className={styles.body}>
@@ -16,7 +20,9 @@ export default function LoginPageUI(props) {
         <div className={styles.imgBox}>
           <img src={imgIcon} className={styles.imgIcon} alt="icon" />
         </div>
-        <form onSubmit={props.onClickLogin} className={styles.inputBox}>
+        <form onSubmit={handleLoginSubmit} className={styles.inputBox}>
+          <input type="hidden" name="csrfmiddlewaretoken" value={csrfToken} />
+          {/* {% csrf_token %} */}
           <div className={styles.idBox}>
             <img src={idIcon} className={styles.idIcon} alt="id" />
             <input
@@ -41,10 +47,7 @@ export default function LoginPageUI(props) {
             />
           </div>
           <div className={styles.bBox}>
-            <button
-              type="submit"
-              className={styles.button}
-            >
+            <button type="submit" className={styles.button}>
               <span className={styles.logSpan}>로그인</span>
             </button>
           </div>

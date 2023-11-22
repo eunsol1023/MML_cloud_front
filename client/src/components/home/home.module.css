@@ -1,18 +1,18 @@
-.home_body{
-  margin-left : 270px;
-
+.home_body {
+  margin-left: 270px;
 }
 
-/* ContentArea.module.css */
-
-.home_playlist{
-    /* background-color: gray; */
-    width: 1100px;
-    height: 350px;
-    margin: auto;
-    margin-bottom: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-
+.home_search{
+  height: 200px;
+  background-color: gray;
+  margin-bottom: 20px;
+}
+.home_playlist {
+  width: 1100px;
+  height: 310px;
+  margin: auto;
+  margin-bottom: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .home_playlist_container {
@@ -33,26 +33,31 @@
   cursor: pointer;
 }
 
-.home_card_container{
+.home_card_container {
   height: 230px;
-  width: 1100px;
-  display: grid;
+  width: 1000px;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.1rem; 
+  justify-content: center;
+  gap: 0.1rem;
+  margin-left: 20px;
 }
 
 .home_song_card {
-  display: grid; /* Use grid layout for the song cards */
-  grid-template-columns: repeat(3, 1fr); /* Create three columns with equal width */
-  gap: 0.1rem; /* Set the gap between grid items */
-  margin-bottom: 30px; /* Maintain bottom margin for spacing */
-  justify-content: space-evenly; /* This can be removed if not needed, as grid takes care of spacing */
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem; 
+
+}
+
+.home_abc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home_card {
-  /* background-color: yellow; */
-  width: 320px;
-  height: 110px;
+  width: 340px;
+  height: 100px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 2px;
   overflow: hidden;
@@ -65,15 +70,14 @@
 }
 
 .home_cardImage {
-  width: 60px; /* Adjust size as needed */
-  height: 60px; /* Keep aspect ratio */
+  width: 65px; /* Adjust size as needed */
+  height: 65px; /* Keep aspect ratio */
   /* Add some margin if needed */
   margin: 15px; /* Add space between image and text */
 }
 
-
 .home_cardContent {
-  height: 60px;
+  height: 70px;
   display: flex; /* Keep using flexbox */
   flex-direction: column; /* Keep vertical layout for the text content */
   justify-content: center; /* Center content vertically */
@@ -83,11 +87,12 @@
 
 .home_cardContent h3 {
   margin-top: 0;
-  /* margin-bottom: 0.125rem;  */
+  margin-bottom: 0.125rem;
 }
 
 .home_cardContent p {
-  /* margin: 0; */
+  margin: 0;
+  padding-top: 5px;
   color: #666;
   font-size: 0.875rem;
 }

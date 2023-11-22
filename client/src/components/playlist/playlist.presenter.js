@@ -43,57 +43,64 @@ const playlists = [
   },
 ];
 
-export default function PlayListUI(onClickPlayListView) {
-  return (
-    <div className={styles.body}>
-      <div className={styles.playlist_box}>
-        <div className={styles.playlist_container}>
-          <div className={styles.playlist_name}>Song2vec</div>
-          <span
-            className={styles.playlist_info}
-            onClickPlayListView={onClickPlayListView}
-          >
-            더보기
-          </span>
-        </div>
-        <div className={styles.song_box}>
-          {playlists.map((playlist, index) => (
-            <div key={index} className={styles.card}>
-              <img
-                src={playlist.image}
-                alt={playlist.title}
-                className={styles.cardImage}
-              />
-              <div className={styles.cardContent}>
-                <h3>{playlist.title}</h3>
-                <p>{playlist.artist}</p>
+export default function PlayListUI(props) {
+  {
+    return (
+      <div className={styles.body}>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_container}>
+            <div className={styles.playlist_name}>Song2vec</div>
+            <span
+              className={styles.playlist_info}
+              onClick={props.onClickPlayListView}
+            >
+              더보기
+            </span>
+          </div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className={styles.playlist_box}>
+          <div className={styles.playlist_container}>
+            <div className={styles.playlist_name}>사용자 협업 필터링</div>
+            <span
+              className={styles.playlist_info}
+              onClick={props.onClickPlayListView}
+            >
+              더보기
+            </span>
+          </div>
+          <div className={styles.song_box}>
+            {playlists.map((playlist, index) => (
+              <div key={index} className={styles.card}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.cardImage}
+                />
+                <div className={styles.cardContent}>
+                  <h3>{playlist.title}</h3>
+                  <p>{playlist.artist}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className={styles.playlist_box}>
-        <div className={styles.playlist_container}>
-          <div className={styles.playlist_name}>사용자 협업 필터링</div>
-          <span className={styles.playlist_info}>더보기</span>
-        </div>
-        <div className={styles.song_box}>
-          {playlists.map((playlist, index) => (
-            <div key={index} className={styles.card}>
-              <img
-                src={playlist.image}
-                alt={playlist.title}
-                className={styles.cardImage}
-              />
-              <div className={styles.cardContent}>
-                <h3>{playlist.title}</h3>
-                <p>{playlist.artist}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-    // </div>
-  );
+      // </div>
+    );
+  }
 }
