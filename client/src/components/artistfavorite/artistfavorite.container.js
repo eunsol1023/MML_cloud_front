@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { csvParse } from "d3-dsv";
-      
+
 export default function ArtistFavorite() {
     const navigate = useNavigate();
 
