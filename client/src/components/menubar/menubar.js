@@ -30,21 +30,35 @@ function MenuBar() {
     navigate("/playlist");
   };
 
-  const onClickPlayListView = () => {
-    navigate("/playlistview");
-  };
+  // const onClickPlayListView = () => {
+  //   navigate("/playlistview");
+  // };
 
   const onClickLogout = async () => {
-    const refreshToken = localStorage.getItem("refresh_token");
+    const csrfToken = getCsrfToken();
+    if (!csrfToken) {
+      console.error("CSRF token not found");
+      alert("로그아웃을 수행할 수 없습니다. CSRF 토큰이 없습니다.");
+      return;
+    }
+    console.log("CSRF Token:", csrfToken);
+    
     try {
-      await axios.post("http://api.cloudmml.com:8000/user/logout", {
-        // Ensure correct API endpoint
-        refresh_token: refreshToken,
-      });
+      const response = await axios.post(
+        "http://api.cloudmml.com:8000/user/logout/",
+        {}, // 요청 본문 (빈 객체)
+        {
+          withCredentials: true,
+          headers: {
+            "X-CSRFToken": csrfToken,
+          },
+        }
+      );
 
-      localStorage.removeItem("access_token");
-      localStorage.removeItem("refresh_token");
-      // 성공적으로 로그아웃 처리 후 UI 업데이트
+      if (response.status === 200) {
+        alert("로그아웃 성공");
+        navigate("/");
+      }
     } catch (error) {
       console.error("Logout failed:", error);
       // 에러 처리, 예: 사용자에게 로그아웃 실패 메시지 표시

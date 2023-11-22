@@ -2,11 +2,52 @@
   margin-left: 270px;
 }
 
-.home_search{
+.home_search_area{
   height: 200px;
   background-color: gray;
   margin-bottom: 20px;
 }
+
+.home_search {
+  width: 900px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.home_search form {
+  display: flex;
+  width: 900px;
+}
+
+.home_search input[type="text"] {
+  width: 850px; /* Input width must be less than form to fit button */
+  height: 90px; /* Your input height */
+  padding: 0 20px; /* Padding inside the input */
+  border: 2px solid #cccccc; /* Example border */
+  border-radius: 50px; /* Rounded borders */
+  font-size: 20px; /* Larger font size */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.home_search button {
+  width: 100px; /* Fixed width for the button */
+  height: 90px; /* Height to match the input */
+  border: none; /* Remove border */
+  border-radius: 50px; /* Rounded borders to match input */
+  background-color: #f0f0f0; /* Light grey background */
+  cursor: pointer; /* Cursor pointer to indicate clickable */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow with input */
+  outline: none; /* Remove focus outline */
+}
+
+.home_search button:hover {
+  background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+/* Adjust the alignment and padding as necessary */
+
 .home_playlist {
   width: 1100px;
   height: 310px;

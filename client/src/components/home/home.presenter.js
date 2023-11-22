@@ -49,19 +49,18 @@ export default function HomePageUI(props) {
   {
     return (
       <div className={styles.home_body}>
-        <div className={styles.home_search}>
-          <form
-            type="search"
-            className={styles.home_form}
-            placeholder="상황 및 기분 입력"
-            // onChange={onChange}
-          />
-          <button
-            onClick={props.onClickSearch}
-            className={styles.home_searchbutton}
-          >
-            검색
-          </button>
+        <div className={styles.home_search_area}>
+          <div className={styles.home_search}>
+          <form onSubmit={props.onFormSubmit}>
+            <input
+              type="text"
+              value={props.sentence}
+              onChange={props.onInputChange}
+              placeholder="상황 및 감정 입력"
+            />
+            <button type="submit">검색</button>
+          </form>
+          </div>
         </div>
         <div className={styles.home_playlist_area}>
           <div className={styles.home_playlist}>
