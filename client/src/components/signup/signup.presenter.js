@@ -5,7 +5,6 @@ import React from "react";
 import styles from "./signup.module.css";
 
 export default function SignupPageUI(props) {
-
   const yearOptions = [];
   const currentYear = new Date().getFullYear();
   for (let year = 1985; year <= currentYear; year++) {
@@ -37,61 +36,67 @@ export default function SignupPageUI(props) {
   return (
     <div className={styles.body}>
       <div className={styles.sWrapper}>
-        <h1 className={styles.sign}>회원가입</h1>
-        <div>
+        <div className={styles.signup}>
+          <h1>회원가입</h1>
+          <h3>아이디</h3>
           <div className={styles.idBox}>
-            <input 
-            onChange={props.onChangeUserId} 
-            className={styles.textInput}
-            type="text" 
-            id="userId" 
-            placeholder="아이디" 
+            <input
+              onChange={props.onChangeUserId}
+              className={styles.textInput}
+              type="text"
+              id="userId"
+              placeholder="아이디는 영어와 숫자만 가능합니다."
             />
           </div>
+          <h3>비밀번호</h3>
           <div className={styles.pwBos}>
             <div className={styles.idBox}>
               <input
                 type="password"
                 id="password"
                 className={styles.textInput}
-                placeholder="비밀번호"
+                placeholder="비밀번호는 숫자 4자리로 입력해주세요."
                 value={props.password}
                 onChange={props.handlePasswordChange}
               />
             </div>
+            <h3>비밀번호 확인</h3>
             <div className={styles.idBox}>
               <input
                 type="password"
                 id="passwordConfirm"
                 className={styles.textInput}
-                placeholder="비밀번호 확인"
+                placeholder="비밀번호를 다시 입력해주세요."
                 value={props.passwordConfirm}
                 onChange={props.handlePasswordConfirmChange}
               />
             </div>
           </div>
+          <h3>성별</h3>
           <div className={styles.genderBox}>
-              <label className={styles.newLabel}>
-                <input className={styles.newMInput}
-                  type="radio"
-                  name="gender"
-                  value="M"
-                  onChange={props.handleGenderChange}
-                />
-                남자                
-              </label>
-              <label className={styles.newLabel}>
-                <input className={styles.newFInput}
+            <label className={styles.newLabel}>
+              <input
+                className={styles.newMInput}
+                type="radio"
+                name="gender"
+                value="M"
+                onChange={props.handleGenderChange}
+              />
+              남자
+            </label>
+            <label className={styles.newLabel}>
+              <input
+                className={styles.newFInput}
                 type="radio"
                 name="gender"
                 value="F"
                 onChange={props.handleGenderChange}
-                />
-                여자                
-              </label>
+              />
+              여자
+            </label>
           </div>
+          <h3>생년월일</h3>
           <div className={styles.birthBox}>
-            <span className={styles.dateSpan}>생년월일</span>
             <select
               id="birthYear"
               className={styles.birthInput}
@@ -125,11 +130,10 @@ export default function SignupPageUI(props) {
             <p className={styles.errorText}>비밀번호가 일치하지 않습니다.</p>
           )}
           <div className={styles.buttonStyle}>
-          <button onClick={props.onClickSubmit} className={styles.nextButton}>
-            다음 페이지 ⇾
-          </button>
+            <button onClick={props.onClickSubmit} className={styles.nextButton}>
+              다음 페이지 ⇾
+            </button>
           </div>
-
         </div>
       </div>
     </div>
