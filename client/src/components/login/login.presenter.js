@@ -31,7 +31,7 @@ export default function LoginPageUI(props) {
               id="ID"
               placeholder="아이디를 입력해주세요"
               onChange={props.onChangeUserId}
-              value={props.userId}
+              value={props.username}
             />
           </div>
           <br />

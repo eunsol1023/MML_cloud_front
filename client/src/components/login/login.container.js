@@ -6,11 +6,11 @@ import { useNavigate } from "react-router-dom";
 export default function LoginPage() {
   const navigate = useNavigate();
 
-  const [userId, setUserId] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const onChangeUserId = (event) => {
-    setUserId(event.target.value);
+    setUsername(event.target.value);
   };
 
   const onChangePassword = (event) => {
@@ -31,7 +31,7 @@ export default function LoginPage() {
       const response = await axios.post(
         "http://api.cloudmml.com:8000/user/login/",
         {
-          username: userId, // 사용자가 입력한 userId 사용
+          username: username, // 사용자가 입력한 userId 사용
           password: password, // 사용자가 입력한 password 사용
         },
         {
@@ -50,7 +50,7 @@ export default function LoginPage() {
 
   return (
     <LoginPageUI
-      userId={userId}
+      userId={username}
       password={password}
       onChangeUserId={onChangeUserId}
       onChangePassword={onChangePassword}
@@ -60,3 +60,4 @@ export default function LoginPage() {
     />
   );
 }
+
