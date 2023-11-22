@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./menubar.module.css";
 import logoImage from "./logo.jpeg";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 function getCsrfToken() {
-  const cookies = document.cookie.split('; ');
-  const csrfCookie = cookies.find(cookie => cookie.startsWith('csrftoken='));
-  return csrfCookie ? decodeURIComponent(csrfCookie.split('=')[1]) : null;
+  const cookies = document.cookie.split("; ");
+  const csrfCookie = cookies.find((cookie) => cookie.startsWith("csrftoken="));
+  return csrfCookie ? decodeURIComponent(csrfCookie.split("=")[1]) : null;
 }
 
 function MenuBar() {
@@ -34,15 +34,22 @@ function MenuBar() {
   const onClickLogout = async () => {
     try {
       const csrfToken = getCsrfToken();
-      console.log('1')
-      console.log('CSRF Token:', csrfToken);
+      if (!csrfToken) {
+        console.error("CSRF token not found");
+        alert("CSRF token not found. Unable to logout.");
+        return;
+      }
+      console.log("CSRF Token:", csrfToken);
+
       const response = await axios.post(
         "http://api.cloudmml.com:8000/user/logout/",
         {}, // 요청 본문 (빈 객체)
-        { withCredentials: true,
-        headers: {
-          'X-CSRFToken' : csrfToken
-        } } // 쿠키를 포함하도록 설정하는 옵션
+        {
+          withCredentials: true,
+          headers: {
+            "X-CSRFToken": csrfToken,
+          },
+        }
       );
 
       if (response.status === 200) {
