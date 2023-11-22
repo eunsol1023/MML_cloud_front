@@ -7,6 +7,9 @@ import axios from "axios";
 function getCsrfToken() {
   const cookies = document.cookie.split("; ");
   const csrfCookie = cookies.find((cookie) => cookie.startsWith("csrftoken="));
+  if (!csrfCookie) {
+    console.warn("CSRF token cookie not found in document.cookie");
+  }
   return csrfCookie ? decodeURIComponent(csrfCookie.split("=")[1]) : null;
 }
 
@@ -32,17 +35,17 @@ function MenuBar() {
   };
 
   const onClickLogout = async () => {
-    try {
-      const csrfToken = getCsrfToken();
-      if (!csrfToken) {
-        console.error("CSRF token not found");
-        alert("CSRF token not found. Unable to logout.");
-        return;
-      }
-      console.log("CSRF Token:", csrfToken);
+    const csrfToken = getCsrfToken();
+    if (!csrfToken) {
+      console.error("CSRF token not found");
+      alert("로그아웃을 수행할 수 없습니다. CSRF 토큰이 없습니다.");
+      return;
+    }
+    console.log("CSRF Token:", csrfToken);
 
+    try {
       const response = await axios.post(
-        "http://.cloudmml.com:8000/user/logout/",
+        "http://api.cloudmml.com:8000/user/logout/",
         {}, // 요청 본문 (빈 객체)
         {
           withCredentials: true,
