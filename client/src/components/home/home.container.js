@@ -12,11 +12,11 @@ export default function HomaPage() {
 
   const [sentence, setSentence] = useState("");
 
-  const handleInputChange = (event) => {
+  const onInputChange = (event) => {
     setSentence(event.target.value);
   };
 
-  const handleFormSubmit = async (event) => {
+  const onFormSubmit = async (event) => {
     event.preventDefault();
     if (sentence) {
       console.log("Sending sentence to API:", sentence);
@@ -40,8 +40,8 @@ export default function HomaPage() {
     <HomePageUI
       onClickSearch={onClickSearch}
       onClickPlayListView={onClickPlayListView}
-      onInputChange={handleInputChange}
-      onFormSubmit={handleFormSubmit}
+      onInputChange={onInputChange}
+      onFormSubmit={onFormSubmit}
       sentence={sentence}
     />
   );

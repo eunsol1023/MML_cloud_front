@@ -73,7 +73,21 @@ const playlists = [
       "https://cdnimg.melon.co.kr/cm2/album/images/113/62/544/11362544_20231110142622_1000.jpg?YUV444-90",
   },
   {
-    id: 5,
+    id:11,
+    title: "You & Me",
+    artist: "제니 (JENNIE)",
+    image:
+      "https://cdnimg.melon.co.kr/cm2/album/images/113/39/556/11339556_20231005170424_1000.jpg?9fa72785dcda82b88b47f847cb08dbd8/melon/quality/80/optimize",
+  },
+  {
+    id:12,
+    title: "You & Me",
+    artist: "제니 (JENNIE)",
+    image:
+      "https://cdnimg.melon.co.kr/cm2/album/images/113/39/556/11339556_20231005170424_1000.jpg?9fa72785dcda82b88b47f847cb08dbd8/melon/quality/80/optimize",
+  },
+  {
+    id:13,
     title: "You & Me",
     artist: "제니 (JENNIE)",
     image:
@@ -81,25 +95,28 @@ const playlists = [
   },
 ];
 
-export default function PlayListViewUI() {
+export default function PlayListViewUI(props) {
   return (
     <div className={styles.body}>
       <div className={styles.playlisttitle}>플레이리스트 이름</div>
-      <div className={styles.playlistContainer}>
-        {playlists.map((playlist) => (
-          <div key={playlist.id} className={styles.playlistItem}>
-            <div className={styles.playlistImageBox}>
-              <img
-                src={playlist.image}
-                alt={playlist.title}
-                className={styles.playlistImage}
-              />
+      <div className={styles.playlistContainers}>
+        <div className={styles.playlistContainer}>
+          {playlists.map((playlist) => (
+            <div key={playlist.id} className={styles.playlistItem}>
+              <div className={styles.playlistImageBox}>
+                <img
+                  src={playlist.image}
+                  alt={playlist.title}
+                  className={styles.playlistImage}
+                />
+              </div>
+              <div className={styles.title} onClick={props.onClickTitle}>
+                {playlist.title}
+              </div>
+              <div className={styles.artist}>{playlist.artist}</div>
             </div>
-            <div className={styles.title}>{playlist.title}</div>
-            <div className={styles.artist}>{playlist.artist}</div>
-            
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
