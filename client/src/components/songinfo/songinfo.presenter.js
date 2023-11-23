@@ -88,9 +88,9 @@ export default function SonginfoUI() {
           <h3 className={styles.song_title}>{song.title}</h3>
           <p className={styles.song_artist}>{song.artist}</p>
         </div>
-        <hr className={styles.hr}/>
+        <hr className={styles.hr} />
         <div className={styles.info_lyric}>
-          <p className={styles.song_lyric}>{song.lyric}</p>
+          <pre className={styles.song_lyric}>{song.lyric}</pre>
         </div>
       </div>
     </div>

@@ -3,9 +3,13 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { csvParse } from "d3-dsv";
+import { useRecoilState } from "recoil";
+import { signupState } from "../../store/status";
       
 export default function ArtistFavorite() {
     const navigate = useNavigate();
+
+    const [signData, setSignData] = useRecoilState(signupState)
 
     const [artists, setArtists] = useState([]);
     const [favoriteArtists, setFavoriteArtists] = useState([]);
@@ -42,13 +46,40 @@ export default function ArtistFavorite() {
         }
     };
 
-    const handleSubmit = () => {
-        if (favoriteArtists.length === 0) {
-            setMessage('최소 한 명의 아티스트를 선택해 주세요.');
+    const handleSubmit = async () => {
+        if (favoriteArtists.length !== 5) {
+            setMessage('다섯명의 아티스트를 선택해 주세요.');
             return;
         }
-        console.log("선택된 아티스트", favoriteArtists);
-        navigate('/'); 
+
+        try{
+            const response = await axios.post('http://api.cloudmml.com:8000/user/signup/',{
+                username : signData.username,
+                password : signData.password,
+                gender : signData.gender,
+                age_range : signData.age_range,
+                genre1: signData.genre1,
+                genre2: signData.genre2,
+                genre3: signData.genre3,
+                genre4: signData.genre4,
+                genre5: signData.genre5,
+                artist1 : favoriteArtists[0],
+                artist2 : favoriteArtists[1],
+                artist3 : favoriteArtists[2],
+                artist4 : favoriteArtists[3],
+                artist5 : favoriteArtists[4],
+            })
+
+            console.log("선택된 아티스트", favoriteArtists);
+
+            if (response.status === 200){
+                alert('회원가입 성공!!')
+                navigate('/'); 
+            }
+            
+        }catch(error){
+            console.log(error)
+        }
     };
 
     const hideMessage = () => setMessage('');
