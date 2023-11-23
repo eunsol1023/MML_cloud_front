@@ -1,8 +1,8 @@
-// import { useRecoilState } from "recoil";
+import styles from "./signup.module.css";
 import React from "react";
 
 // import axios from "axios";
-import styles from "./signup.module.css";
+// import { useRecoilState } from "recoil";
 
 export default function SignupPageUI(props) {
   const yearOptions = [];
@@ -45,7 +45,7 @@ export default function SignupPageUI(props) {
               className={styles.textInput}
               type="text"
               id="userId"
-              placeholder="아이디는 영어와 숫자만 가능합니다."
+              placeholder="영어와 숫자만 가능합니다."
             />
           </div>
           <h3>비밀번호</h3>
@@ -55,7 +55,7 @@ export default function SignupPageUI(props) {
                 type="password"
                 id="password"
                 className={styles.textInput}
-                placeholder="비밀번호는 숫자 4자리로 입력해주세요."
+                placeholder="숫자 4자리로 입력해주세요."
                 value={props.password}
                 onChange={props.handlePasswordChange}
               />
