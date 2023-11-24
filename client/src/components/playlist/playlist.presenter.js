@@ -1,6 +1,6 @@
 import styles from "./playlist.module.css";
 
-const playlists = [
+const playlist1 = [
   {
     title: "all i want for christmas",
     artist: "ghoss",
@@ -33,7 +33,7 @@ const playlists = [
   },
 ];
 
-const playlistss = [
+const playlist2 = [
   {
     title: "나는 트로트가 싫어요",
     artist: "임창정",
@@ -81,7 +81,7 @@ export default function PlayListUI(props) {
             </span>
           </div>
           <div className={styles.song_box}>
-            {playlists.map((playlist, index) => (
+            {playlist1.map((playlist, index) => (
               <div key={index} className={styles.card}>
                 <img
                   src={playlist.image}
@@ -107,7 +107,7 @@ export default function PlayListUI(props) {
             </span>
           </div>
           <div className={styles.song_box}>
-            {playlistss.map((playlist, index) => (
+            {playlist2.map((playlist, index) => (
               <div key={index} className={styles.card}>
                 <img
                   src={playlist.image}

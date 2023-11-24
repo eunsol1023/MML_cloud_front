@@ -1,6 +1,6 @@
 import styles from "./home.module.css";
 
-const playlists = [
+const playlist1 = [
   {
     title: "거짓말 거짓말 거짓말",
     artist: "이적",
@@ -39,7 +39,7 @@ const playlists = [
   },
 ];
 
-const playlistss = [
+const playlist2 = [
   {
     title: "내 눈물모아",
     artist: "서지원",
@@ -110,7 +110,7 @@ export default function HomePageUI(props) {
             </div>
             <div className={styles.home_card_container}>
               <div className={styles.home_song_card}>
-                {playlists.map((playlist, index) => (
+                {playlist1.map((playlist, index) => (
                   <div key={index} className={styles.home_abc}>
                     <div className={styles.home_card}>
                       <img
@@ -143,7 +143,7 @@ export default function HomePageUI(props) {
             </div>
             <div className={styles.home_card_container}>
               <div className={styles.home_song_card}>
-                {playlistss.map((playlist, index) => (
+                {playlist2.map((playlist, index) => (
                   <div key={index} className={styles.home_abc}>
                     <div className={styles.home_card}>
                       <img

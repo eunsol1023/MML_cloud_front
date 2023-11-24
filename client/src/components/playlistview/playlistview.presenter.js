@@ -38,18 +38,13 @@ const playlists = [
     image:
       "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/032/841/15032841_1407227620592_1_600x600.JPG/dims/resize/Q_80,0",
   },
-  {
-    title: "one little christmas tree",
-    artist: "stevie wonder(스티비 원더)",
-    image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/237/549/81237549_1565575146207_1_600x600.JPG/dims/resize/Q_80,0",
-  },
+
 ];
 
 export default function PlayListViewUI(props) {
   return (
     <div className={styles.body}>
-      <div className={styles.playlisttitle}>플레이리스트 이름</div>
+      <div className={styles.playlisttitle}>선선한 날 아침 산책</div>
       <div className={styles.playlistContainers}>
         <div className={styles.playlistContainer}>
           {playlists.map((playlist) => (

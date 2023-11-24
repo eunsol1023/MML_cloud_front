@@ -6,11 +6,13 @@
 }
 
 .playlisttitle {
-  height: 60px;
+  height: 50px;
   align-items: center;
   margin-top: 60px;
   padding-left: 230px;
   font-size: xx-large;
+  font-size: 30px;
+  font-weight: bold;
 }
 .playlistContainers{
   width: 100%;

@@ -76,7 +76,7 @@ export default function ArtistFavorite() {
 
       console.log("선택된 아티스트", favoriteArtists);
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         alert("회원가입 성공!!");
         navigate("/");
       } else {
