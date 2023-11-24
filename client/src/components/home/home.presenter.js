@@ -91,7 +91,7 @@ export default function HomePageUI(props) {
                 onChange={props.onInputChange}
                 placeholder="상황 및 감정 입력"
               />
-              <button type="submit">검색</button>
+              <button onClick={props.onClickSearch}> 검색</button>
             </form>
           </div>
         </div>

@@ -44,22 +44,22 @@ const playlists = [
 export default function PlayListViewUI(props) {
   return (
     <div className={styles.body}>
-      <div className={styles.playlisttitle}>선선한 날 아침 산책</div>
+      <div className={styles.playlisttitle}>{props.data?.title}</div>
       <div className={styles.playlistContainers}>
         <div className={styles.playlistContainer}>
-          {playlists.map((playlist) => (
-            <div key={playlist.id} className={styles.playlistItem}>
+          {props.data?.map((data, index) => (
+            <div key={index} className={styles.playlistItem}>
               <div className={styles.playlistImageBox}>
                 <img
-                  src={playlist.image}
-                  alt={playlist.title}
+                  src={data?.album_image_url}
+                  alt={data?.title}
                   className={styles.playlistImage}
                 />
               </div>
               <div className={styles.title} onClick={props.onClickTitle}>
-                {playlist.title}
+                {data?.title}
               </div>
-              <div className={styles.artist}>{playlist.artist}</div>
+              <div className={styles.artist}>{data?.artist}</div>
             </div>
           ))}
         </div>

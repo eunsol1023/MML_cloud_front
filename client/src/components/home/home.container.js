@@ -5,7 +5,6 @@ import axios from "axios";
 
 export default function HomaPage() {
   const navigate = useNavigate();
-  const onClickSearch = () => {};
   const onClickPlayListView = () => {
     navigate("/playlistview");
   };
@@ -35,6 +34,16 @@ export default function HomaPage() {
       }
     }
   };
+
+  const onClickSearch = async () => {
+    if(!sentence) {
+      alert('검색어를 입력해주세요!')
+      return
+    }
+    localStorage.setItem('sentence',sentence)
+    localStorage.setItem('pagetype','search')
+    navigate('/playlistview')
+  }
 
   return (
     <HomePageUI
