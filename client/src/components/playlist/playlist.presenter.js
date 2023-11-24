@@ -48,19 +48,19 @@ const playlistss = [
   },
   {
     title: "따듯해",
-    atrist: "적재",
+    artist: "적재",
     image:
       "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/108/827/82108827_1624599580659_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
     title: "봄비",
-    atrist: "백지영",
+    artist: "백지영",
     image:
       "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/351/248/80351248_1366595963948_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
     title: "봄이 온다면",
-    atrist: "안예은",
+    artist: "안예은",
     image:
       "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/919/482/80919482_1486109887935_1_600x600.JPG/dims/resize/Q_80,0",
   },
@@ -72,7 +72,7 @@ export default function PlayListUI(props) {
       <div className={styles.body}>
         <div className={styles.playlist_box}>
           <div className={styles.playlist_container}>
-            <div className={styles.playlist_name}>Song2vec</div>
+            <div className={styles.playlist_name}>Song2vec으로 추천된 플레이리스트</div>
             <span
               className={styles.playlist_info}
               onClick={props.onClickPlayListView}
@@ -98,7 +98,7 @@ export default function PlayListUI(props) {
         </div>
         <div className={styles.playlist_box}>
           <div className={styles.playlist_container}>
-            <div className={styles.playlist_name}>사용자 협업 필터링</div>
+            <div className={styles.playlist_name}>사용자 협업 필터링으로 추천된 플레이리스트</div>
             <span
               className={styles.playlist_info}
               onClick={props.onClickPlayListView}

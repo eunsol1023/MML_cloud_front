@@ -23,7 +23,7 @@ export default function HomaPage() {
 
       try {
         const response = await axios.post(
-          "http://api.cloudmml.com:8000/music/tag_song2vec/",
+          // "http://api.cloudmml.com:8000/music/tag_song2vec/",
           { sentence }
         );
 

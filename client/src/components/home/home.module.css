@@ -132,10 +132,15 @@
 
 }
 
+
 .home_cardContent h3 {
+  width: 230px;
   margin-top: 0;
   margin-bottom: 0.125rem;
   font-size: 17px;
+  white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 말줄임표로 표시 */
 }
 
 .home_cardContent p {
