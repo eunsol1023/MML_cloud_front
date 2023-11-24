@@ -2,44 +2,67 @@ import styles from "./playlist.module.css";
 
 const playlists = [
   {
-    id: 1,
-    title: "Love Lee",
-    artist: "AKMU",
+    title: "all i want for christmas",
+    artist: "ghoss",
     image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/181/610/84181610_1692585955705_1_600x600.JPG/dims/resize/Q_80,0",
-    description: "AKMU의 신곡 Love Lee를 만나보세요.",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/725/422/81725422_1604891467333_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 2,
-    title: "단기 알바",
-    artist: "기리보이",
+    title: "funky glitter christmas",
+    artist: "nmixx",
     image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/372/146/84372146_1698310204451_1_600x600.JPG/dims/resize/Q_80,0",
-    description: "최신 댄스 히트곡 모음",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/083/205/287/83205287_1669181520561_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 3,
-    title: "음악의 신",
-    artist: "SEVENTEEN",
+    title: "kiss me it's christmas (feat. ne-yo)",
+    artist: "leona lewis(리오나 루이스)",
     image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/411/479/84411479_1698023788065_1_600x600.JPG/dims/resize/Q_80,0",
-    description: "SEVENTEEN의 강렬한 비트의 노래들",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/349/606/82349606_1634840126039_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 4,
-    title: "Super Shy",
-    artist: "NewJeans",
+    title: "love song",
+    artist: "7공주(7 princess)",
     image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/019/740/84019740_1688692234715_1_600x600.JPG/dims/resize/Q_80,0",
-    description: "NewJeans의 청량한 목소리를 느낄 수 있는 플레이리스트",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/029/154/15029154_1404717400281_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 5,
-    title: "Get A Guitar",
-    artist: "RIIZE",
+    title: "엉뚱한 상상 (white christmas)",
+    artist: "super junior (슈퍼주니어)",
     image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/181/596/84181596_1693817383651_1_600x600.JPG/dims/resize/Q_80,0",
-    description: "기타 리프가 돋보이는 곡들의 컬렉션",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/264/190/80264190_1312191294577_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+];
+
+const playlistss = [
+  {
+    title: "나는 트로트가 싫어요",
+    artist: "임창정",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/360/198/82360198_1635499201948_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "내 귀에 캔디 (feat. 택연 of 2pm)",
+    artist: "백지영",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/079/944/876/79944876_1404890116152_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "따듯해",
+    atrist: "적재",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/108/827/82108827_1624599580659_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "봄비",
+    atrist: "백지영",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/351/248/80351248_1366595963948_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "봄이 온다면",
+    atrist: "안예은",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/919/482/80919482_1486109887935_1_600x600.JPG/dims/resize/Q_80,0",
   },
 ];
 
@@ -84,7 +107,7 @@ export default function PlayListUI(props) {
             </span>
           </div>
           <div className={styles.song_box}>
-            {playlists.map((playlist, index) => (
+            {playlistss.map((playlist, index) => (
               <div key={index} className={styles.card}>
                 <img
                   src={playlist.image}
