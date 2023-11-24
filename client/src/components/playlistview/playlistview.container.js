@@ -46,8 +46,8 @@ export default function Playlist() {
         if (response.status === 200) {
           console.log("전송성공");
           setData(response.data);
-        } else if (response.status === 400) {
-            console.log("잘못된요청");
+        } else if (response.status === 500) {
+            console.log("Internet Server Error");
         } else {
             console.log("Server Error");
         }
@@ -65,8 +65,8 @@ export default function Playlist() {
         if (response.status === 200) {
           console.log("전송성공");
           setData(response.data);
-        } else if (response.status === 400) {
-          console.log("잘못된요청");
+        } else if (response.status === 500) {
+          console.log("Internet Server Error");
         } else {
             console.log("Server Error");
         }
