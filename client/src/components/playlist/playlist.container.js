@@ -6,6 +6,9 @@ import axios from "axios";
 export default function Playlsit() { 
   const [song2vec, setSong2vec] = useState([])
   const [colaboData, setColaboData] = useState([])
+  const [tmp, setTmp] = useState(0)
+  const [tmp2, setTmp2] = useState(0)
+
   
   const navigate = useNavigate();
   const onClickPlayListView = () => {
@@ -19,13 +22,14 @@ export default function Playlsit() {
 
   const fetchData1 = async () => {
     try {
-      const response = await axios.get('http://api.cloudmml.com:8000/music/song2vec/',{})
-      if (response.status === 200){
-        setSong2vec(response.data.slice(5))
-        return
-      }else {
-        console.log('server error')
-        return
+      if(tmp === 0){
+        const response = await axios.get('http://api.cloudmml.com:8000/music/song2vec/',{})
+        if (response.status === 200){
+            setSong2vec(response.data.slice(0,5))
+            setTmp(1)
+        }else {
+          console.log('server error')
+        }
       }
     }catch(error){
       console.log(error)
@@ -35,15 +39,16 @@ export default function Playlsit() {
 
   const fetchData2 = async () => {
     try{
-      const response = await axios.get('http://api.cloudmml.com:8000/music/user_like_artist/',{})
-      if (response.status === 200){
-        setColaboData(response.data.slice(5))
-        return
-      }else{
-        console.log('server error')
-        return
+      if(tmp2 === 0){
+        const response = await axios.get('http://api.cloudmml.com:8000/music/user_like_artist/',{})
+        if (response.status === 200){
+            setColaboData(response.data.slice(0,5))
+            setTmp2(1)
+        }else{
+          console.log('server error')
+          return
+        }
       }
-
     }catch(error){
       console.log(error)
     }

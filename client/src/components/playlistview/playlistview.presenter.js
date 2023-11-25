@@ -51,7 +51,7 @@ export default function PlayListViewUI(props) {
             <div key={index} className={styles.playlistItem}>
               <div className={styles.playlistImageBox}>
                 <img
-                  src={data?.album_image_url}
+                  src={data?.image}
                   alt={data?.title}
                   className={styles.playlistImage}
                 />

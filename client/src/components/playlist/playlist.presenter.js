@@ -19,7 +19,7 @@ export default function PlayListUI(props) {
             {props.song2vec?.map((playlist, index) => (
               <div key={index} className={styles.card}>
                 <img
-                  src={playlist.album_image_url}
+                  src={playlist.image}
                   alt={playlist.title}
                   className={styles.cardImage}
                 />
@@ -45,7 +45,7 @@ export default function PlayListUI(props) {
             {props.colaboData?.map((playlist, index) => (
               <div key={index} className={styles.card}>
                 <img
-                  src={playlist.album_image_url}
+                  src={playlist.image}
                   alt={playlist.title}
                   className={styles.cardImage}
                 />
