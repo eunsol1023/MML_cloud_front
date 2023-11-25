@@ -25,7 +25,7 @@ export default function SonginfoPage() {
     }
 
     useEffect(() => {
-        fetchData()
+        fetchData() 
     },[])
 
     return(<SonginfoUI
