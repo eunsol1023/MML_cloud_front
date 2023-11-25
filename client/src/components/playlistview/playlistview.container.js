@@ -8,7 +8,9 @@ export default function Playlist() {
 
   const [data, setData] = useState([]);
 
-  const onClickTitle = () => {
+  const onClickTitle = (title, artist) => {
+    localStorage.setItem('songtitle', title)
+    localStorage.setItem('songartist', artist)
     navigate("/songinfo");
   };
 
