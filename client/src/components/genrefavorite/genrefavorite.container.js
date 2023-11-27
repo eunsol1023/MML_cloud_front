@@ -1,13 +1,19 @@
 import GenreFavoriteUI from "./genrefavorite.presenter";
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { signupState } from "../../store/status";
+import axios from "axios";
 
 export default function GenreFavorite() {
     const navigate = useNavigate();
 
+    const [signData, setSignData] = useRecoilState(signupState)
+
     const [favoriteGenre, setFavoriteGenre] = useState([]);
     const [message, setMessage] = useState('');
-    const hideMessage = () => setMessage('')
+    const hideMessage = () => setMessage('');
+    
 
     const onGenreSelect = (genre) => {
         if (favoriteGenre.includes(genre)) {
@@ -21,23 +27,33 @@ export default function GenreFavorite() {
         }
 
         setFavoriteGenre(prev => [...prev, genre]);
+        console.log(favoriteGenre[0]);
         setMessage('');
     };
 
-    const handleSubmit = () => {
-        if (favoriteGenre.length === 0) {
-            setMessage('최소 하나의 장르를 선택해 주세요.');
+    const handleSubmit = async () => {
+        if (favoriteGenre.length !== 5) {
+            setMessage('5개의 장르를 선택해 주세요.');
             return;
         }
-        console.log("선택된 장르", favoriteGenre);
-        navigate('/artistfavorite')
+
+        setSignData((prev) => {
+            return{
+                ...prev,
+                genre1 : favoriteGenre[0],
+                genre2 : favoriteGenre[1],
+                genre3 : favoriteGenre[2],
+                genre4 : favoriteGenre[3],
+                genre5 : favoriteGenre[4],
+            }
+        })
+
+        navigate('/artistfavorite');
     }
 
     const cancleGenre = () => {
         setFavoriteGenre([])
     }
-
-
 
     return(<GenreFavoriteUI
         favoriteGenre={favoriteGenre}

@@ -2,17 +2,63 @@
   margin-left: 270px;
 }
 
-.home_search{
+.home_search_area{
+  display: flex; /* Flexbox를 활성화합니다 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
   height: 200px;
-  background-color: gray;
   margin-bottom: 20px;
 }
+
+/* .home_search {
+  width: 800px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+} */
+
+.home_search form {
+  width: 900px;
+  padding-top: 50px;
+
+}
+
+.home_search input[type="text"] {
+  width: 80%;
+  height: 45px; 
+  padding: 0 20px;
+  border: 2px solid #cccccc;
+  border-radius: 50px; 
+  font-size: 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  
+}
+
+.home_search button {
+  width: 10%; 
+  height: 50px; 
+  margin-left: 5px;
+  border: 2px solid #cccccc; 
+  border-radius: 50px; 
+  cursor: pointer; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: white;
+}
+
+.home_search button:hover {
+  background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+/* Adjust the alignment and padding as necessary */
+
 .home_playlist {
   width: 1100px;
   height: 310px;
   margin: auto;
   margin-bottom: 50px;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px; 
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .home_playlist_container {
@@ -83,16 +129,23 @@
   justify-content: center; /* Center content vertically */
   text-align: left; /* Align text to the left */
   align-items: flex-start; /* 내용을 왼쪽으로 정렬 */
+
 }
 
+
 .home_cardContent h3 {
+  width: 230px;
   margin-top: 0;
   margin-bottom: 0.125rem;
+  font-size: 17px;
+  white-space: nowrap; /* 텍스트를 한 줄로 유지 */
+  overflow: hidden; /* 넘치는 텍스트를 숨김 */
+  text-overflow: ellipsis; /* 넘치는 텍스트를 말줄임표로 표시 */
 }
 
 .home_cardContent p {
   margin: 0;
   padding-top: 5px;
   color: #666;
-  font-size: 0.875rem;
+  font-size: 14px;
 }

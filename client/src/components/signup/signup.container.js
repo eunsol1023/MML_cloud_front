@@ -1,10 +1,14 @@
 import SignupPageUI from "./signup.presenter";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { signupState } from "../../store/status";
 import axios from "axios";
 
 export default function SignupPage() {
   const navigate = useNavigate();
+
+  const [signData, setSignData] = useRecoilState(signupState)
 
   const [userid, setUserId] = useState("");
   const [password, setPassword] = useState("");
@@ -65,48 +69,18 @@ export default function SignupPage() {
       alert("생년월일을 전부 입력해주세요");
       return;
     }
+    const age_range = `${birthYear}-${birthMonth.padStart(2,"0")}-${birthDay.padStart(2,"0")}`;
 
-    try {
-      const age_range = `${birthYear}-${birthMonth.padStart(2,"0")}-${birthDay.padStart(2,"0")}`;
-
-      const response = await axios.post(
-        "http://api.cloudmml.com:8000/user/signup/",
-        {
-          username: userid,
-          password:password,
-          gender:gender,
-          age_range:age_range
-        }
-      );
-
-      if (response.status === 201) {
-        navigate("/genrefavorite");
+    setSignData((prev) => {
+      return{
+        ...prev,
+        username : userid,
+        password : password,
+        gender : gender,
+        age_range : age_range,
       }
-
-
-    } catch (error) {
-      if (error.response) {
-        // 서버로부터의 응답이 있는 경우
-        console.log("Error Response Data:", error.response.data);
-        console.log("Error Response Status:", error.response.status);
-        console.log("Error Response Headers:", error.response.headers);
-
-        // 에러 메시지를 사용자에게 표시
-        alert(
-          `An error occurred: ${error.response.status} ${error.response.data.message}`
-        );
-      } else if (error.request) {
-        // 요청이 이루어졌으나 응답을 받지 못한 경우
-        console.log("Error Request:", error.request);
-      } else {
-        // 요청 설정 중에 문제가 발생한 경우
-        console.log("Error", error.message);
-      }
-
-      console.log(error.config);
-    }
-
-    //  navigate("/genrefavorite");
+    })
+    navigate("/genrefavorite");
   };
 
   return (

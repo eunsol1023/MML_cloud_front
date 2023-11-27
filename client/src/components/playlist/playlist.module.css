@@ -1,88 +1,109 @@
-.body{
-    margin-left : 270px;
-    flex-direction: column;
-    padding-top: 60px;
-  }
-  
-  /* ContentArea.module.css */
-  
-  .playlist_box{
-      /* background-color: gray; */
-      width: 1100px;
-      height: 350px;
-      margin: auto;
-      margin-bottom: 50px;
-      border: 1px solid rgba(0, 0, 0, 0.3);
-  
-  }
-  
-  .playlist_container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    padding-left: 35px;
-  }
-  
-  .playlist_name {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  .playlist_info {
-    padding-right: 10px;
-    cursor: pointer;
-  }
-  
-  
-  .song_box {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    gap: 0.1rem; 
-    margin-bottom: 30px;
-    justify-content: space-evenly;
-  }
-  
-  .card {
-    /* background-color: yellow; */
-    width: 200px;
-    height: 250px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex; /* flexbox 레이아웃을 사용 */
-    flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
-    justify-content: center; /* 수직 방향으로 중앙 정렬 */
-    align-items: center; /* 수평 방향으로 중앙 정렬 */
-    text-align: center; /* 텍스트를 중앙 정렬 */
-  }
-  
-  .cardImage {
-    width: 180px;
-    height: 180px; /* 이미지의 원본 비율을 유지 */
-  }
-  
-  .body{
-    margin-left : 270px;
-  }
-  
-  .cardContent {
-    display: flex; /* flexbox 레이아웃을 사용 */
-    flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
-    justify-content: center; /* 수직 방향으로 중앙 정렬 */
-    align-items: center; /* 수평 방향으로 중앙 정렬 */
-    text-align: center; /* 텍스트를 중앙 정렬 */
-  }
-  
-  .cardContent h3 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  .cardContent p {
-    margin: 0;
-    color: #666;
-    font-size: 0.875rem;
-  }
-  
+.body {
+  margin-left: 270px;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+/* ContentArea.module.css */
+
+.playlist_box {
+  /* background-color: gray; */
+  width: 1100px;
+  height: 350px;
+  margin: auto;
+  margin-bottom: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.playlist_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-left: 35px;
+}
+
+.playlist_name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.playlist_info {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.song_box {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 0.1rem;
+  margin-bottom: 30px;
+  justify-content: space-evenly;
+}
+
+.card {
+  /* background-color: yellow; */
+  width: 200px;
+  height: 260px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* flexbox 레이아웃을 사용 */
+  flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
+  justify-content: center; /* 수직 방향으로 중앙 정렬 */
+  align-items: center; /* 수평 방향으로 중앙 정렬 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+.cardImage {
+  width: 180px;
+  height: 180px;
+  margin-top: 10px;
+  background-size: cover; /* 이미지가 요소를 꽉 채우도록 설정 */
+  background-position: center; /* 이미지가 요소의 중앙에 오도록 설정 */
+  background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+.body {
+  margin-left: 270px;
+}
+
+.cardContent {
+  display: flex; /* flexbox 레이아웃을 사용 */
+  flex-direction: column; /* 요소들을 수직 방향으로 정렬 */
+  justify-content: center; /* 수직 방향으로 중앙 정렬 */
+  align-items: center; /* 수평 방향으로 중앙 정렬 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+}
+
+@keyframes scrollTitle {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.card h3 {
+  height: 25px;
+  width: 170px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 18px;
+  white-space: nowrap; /* 텍스트를 한 줄로 설정 */
+  position: relative;
+  display: block;
+  /* overflow: hidden; */
+  /* padding-right: 1rem;  */
+}
+
+.card:hover h3 {
+  animation: scrollTitle 4s linear infinite;
+}
+
+.cardContent p {
+  margin: 0;
+  color: #666;
+  font-size: 0.875rem;
+}

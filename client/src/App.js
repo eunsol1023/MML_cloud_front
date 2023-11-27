@@ -7,7 +7,9 @@ import HomePage from "./components/home/home.container.js";
 import Playlist from "./components/playlist/playlist.container.js";
 import PlayListView from "./components/playlistview/playlistview.container.js"
 import ArtistFavorite from "./components/artistfavorite/artistfavorite.container.js";
-import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js"
+import GenreFavorite from "./components/genrefavorite/genrefavorite.container.js";
+import SongInfo from "./components/songinfo/songinfo.container.js";
+import { RecoilRoot } from 'recoil';
 // import axios from "axios";
 
 
@@ -20,7 +22,7 @@ function App() {
 
 
   return (
-    <div>
+    <RecoilRoot>
       {!(location.pathname === '/' || location.pathname === '/signup'|| location.pathname === '/artistfavorite'|| location.pathname === '/genrefavorite') && <Menubar />}
       <Routes>
         <Route path="/" element={<Login />} />
@@ -30,8 +32,9 @@ function App() {
         <Route path="/playlistview" element={<PlayListView />} />
         <Route path="/artistfavorite" element={<ArtistFavorite />} />
         <Route path="/genrefavorite" element={<GenreFavorite />} />
+        <Route path="/songinfo" element={<SongInfo />}/>
       </Routes>
-    </div>
+    </RecoilRoot>
   );
 }
 

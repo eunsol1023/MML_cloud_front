@@ -1,47 +1,80 @@
 import styles from "./home.module.css";
 
-const playlists = [
+const playlist1 = [
   {
-    id: 1,
-    title: "음악의 신",
-    artist: "SEVENTEEN",
+    title: "거짓말 거짓말 거짓말",
+    artist: "이적",
     image:
-      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/084/411/479/84411479_1698023788065_1_600x600.JPG/dims/resize/Q_80,0",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/379/882/80379882_1384482376577_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 2,
-    title: "Perfect Night",
-    artist: "LE SSERAFIM (르세라핌)",
+    title: "그날에 우리",
+    artist: "어반자카파",
     image:
-      "https://cdnimg.melon.co.kr/cm2/album/images/113/52/904/11352904_20231027101104_1000.jpg?15266616a973e99cdf8784835d06f01d/melon/quality/80/optimize",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/257/286/80257286_1305529809533_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 3,
-    title: "Baddie",
-    artist: "IVE (아이브)",
+    title: "지금, 좋아해 (love & live)",
+    artist: "이달의 소녀 1/3",
     image:
-      "https://cdnimg.melon.co.kr/cm2/album/images/113/33/459/11333459_20231013103537_1000.jpg?faf3d08c19b6937258fd17162051dbc8/melon/quality/80/optimize",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/929/424/80929424_1489370301455_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 4,
-    title: "Seven (feat. Latto)",
-    artist: "정국",
+    title: "팡파레",
+    artist: "다비치",
     image:
-      "https://cdnimg.melon.co.kr/cm2/album/images/112/86/070/11286070_20230713181059_1000.jpg?0b3a98d363e31435d805d60e3041a54b/melon/quality/80/optimize",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/082/689/476/82689476_1652678222501_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 5,
-    title: "Drama",
-    artist: "aespa",
+    title: "하얀 겨울",
+    artist: "미스터 투(mr.2)",
     image:
-      "https://cdnimg.melon.co.kr/cm2/album/images/113/62/544/11362544_20231110142622_1000.jpg?YUV444-90",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/033/818/15033818_1483433863187_1_600x600.JPG/dims/resize/Q_80,0",
   },
   {
-    id: 5,
-    title: "You & Me",
-    artist: "제니 (JENNIE)",
+    title: "그대 눈빛 하나에",
+    artist: "이상우",
     image:
-      "https://cdnimg.melon.co.kr/cm2/album/images/113/39/556/11339556_20231005170424_1000.jpg?9fa72785dcda82b88b47f847cb08dbd8/melon/quality/80/optimize",
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/032/841/15032841_1407227620592_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+];
+
+const playlist2 = [
+  {
+    title: "내 눈물모아",
+    artist: "서지원",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/034/993/15034993_1444613666858_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "끝사랑",
+    artist: "김범수",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/080/259/813/80259813_1308113129100_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "나보다 조금 더 높은 곳에 니가 있을뿐",
+    artist: "신승훈",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/034/963/15034963_1404972874633_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "난 행복해",
+    artist: "이소라",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/034/590/15034590_1304680209759_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "그대 눈빛 하나에",
+    artist: "이상우",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/015/032/841/15032841_1407227620592_1_600x600.JPG/dims/resize/Q_80,0",
+  },
+  {
+    title: "cuddle up, cozy down christmas",
+    artist: "dolly parton(돌리 파튼)",
+    image:
+      "https://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/610/722/81610722_1601963148653_1_600x600.JPG/dims/resize/Q_80,0",
   },
 ];
 
@@ -49,24 +82,25 @@ export default function HomePageUI(props) {
   {
     return (
       <div className={styles.home_body}>
-        <div className={styles.home_search}>
-          <form
-            type="search"
-            className={styles.home_form}
-            placeholder="상황 및 기분 입력"
-            // onChange={onChange}
-          />
-          <button
-            onClick={props.onClickSearch}
-            className={styles.home_searchbutton}
-          >
-            검색
-          </button>
+        <div className={styles.home_search_area}>
+          <div className={styles.home_search}>
+            <form onSubmit={props.onFormSubmit}>
+              <input
+                type="text"
+                value={props.sentence}
+                onChange={props.onInputChange}
+                placeholder="상황 및 감정 입력"
+              />
+              <button onClick={props.onClickSearch}> 검색</button>
+            </form>
+          </div>
         </div>
         <div className={styles.home_playlist_area}>
           <div className={styles.home_playlist}>
             <div className={styles.home_playlist_container}>
-              <div className={styles.home_playlist_name}>Song2vec</div>
+              <div className={styles.home_playlist_name}>
+                선선한 날 아침 산책
+              </div>
               <span
                 className={styles.playlist_info}
                 onClick={props.onClickPlayListView}
@@ -76,7 +110,7 @@ export default function HomePageUI(props) {
             </div>
             <div className={styles.home_card_container}>
               <div className={styles.home_song_card}>
-                {playlists.map((playlist, index) => (
+                {playlist1.map((playlist, index) => (
                   <div key={index} className={styles.home_abc}>
                     <div className={styles.home_card}>
                       <img
@@ -97,7 +131,9 @@ export default function HomePageUI(props) {
 
           <div className={styles.home_playlist}>
             <div className={styles.home_playlist_container}>
-              <div className={styles.home_playlist_name}>Song2vec</div>
+              <div className={styles.home_playlist_name}>
+                몽환적인 밤 드라이브
+              </div>
               <span
                 className={styles.playlist_info}
                 onClick={props.onClickPlayListView}
@@ -107,7 +143,7 @@ export default function HomePageUI(props) {
             </div>
             <div className={styles.home_card_container}>
               <div className={styles.home_song_card}>
-                {playlists.map((playlist, index) => (
+                {playlist2.map((playlist, index) => (
                   <div key={index} className={styles.home_abc}>
                     <div className={styles.home_card}>
                       <img

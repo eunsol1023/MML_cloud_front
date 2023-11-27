@@ -1,41 +1,56 @@
 .body {
-  margin-left: 280px;
+  /* display: flex;
+  flex-direction: column; */
+  /* width: 1250px; */
+  margin-left: 270px;
 }
 
 .playlisttitle {
-  height: 60px;
+  height: 50px;
   align-items: center;
   margin-top: 60px;
-  padding-left: 70px;
+  padding-left: 230px;
   font-size: xx-large;
+  font-size: 30px;
+  font-weight: bold;
+}
+.playlistContainers{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .playlistContainer {
+  width: 75%;
   padding: 2rem 4rem;
-}
+  align-items: center;
+  display: grid;
+  justify-content: space-evenly}
+
 
 .playlistItem {
+  width: 800px;
+  height: 45px;
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
+  background-color: #ebe9e9a4;
   padding: 1rem;
   margin-bottom: 1rem;
   text-align: center;
-  transition: transform 0.2s ease-in-out;
-  border-bottom-width:2px;
-  border-color: black;
+  border-radius: 10px;
 }
 
 .playlistImageBox {
   width: 30%;
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  padding-left: 0.5rem;
 }
 
 .playlistItem img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 8px;
 }
 
@@ -46,16 +61,17 @@
 
 .title {
   width: 40%;
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
   display: flex;
   flex-direction: row-reverse;
   color: #333;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .artist {
   width: 30%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #666;
 }
