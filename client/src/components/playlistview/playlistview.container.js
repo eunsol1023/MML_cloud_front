@@ -68,7 +68,6 @@ export default function Playlist() {
       try {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/user_like_artist/",
-          {},
           {withCredentials: true,}
         );
 
