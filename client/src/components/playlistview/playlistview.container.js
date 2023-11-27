@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
 export default function Playlist() {
   const navigate = useNavigate();
 
   const [data, setData] = useState([]);
-
+  const [playTitle, setPlayTitle] = useState('');
+  
   const onClickTitle = (title, artist) => {
     localStorage.setItem('songtitle', title)
     localStorage.setItem('songartist', artist)
@@ -26,6 +28,7 @@ export default function Playlist() {
         if (response.status === 200) {
           console.log("전송성공");
           setData(response.data);
+          setPlayTitle(`${sentence} 검색해서 얻은 플레이리스트`)
         } else if (response.status === 400) {
           console.log("Bad Request");
           return;
@@ -38,6 +41,8 @@ export default function Playlist() {
       }
 
     } else if (localStorage.getItem("pagetype") === "song2vec") {
+
+      const playlistTitle = "Song2vec으로 추천된 플레이리스트";
       try {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/song2vec/",
@@ -47,6 +52,7 @@ export default function Playlist() {
         if (response.status === 200) {
           console.log("전송성공");
           setData(response.data);
+          setPlayTitle(playlistTitle);
         } else if (response.status === 500) {
             console.log("Internet Server Error");
         } else {
@@ -57,6 +63,8 @@ export default function Playlist() {
       }
 
     } else if (localStorage.getItem("pagetype") === "user_like_artist") {
+
+      const playlistTitle = "사용자 협업 필터링으로 추천된 플레이리스트";
       try {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/user_like_artist/",
@@ -66,6 +74,7 @@ export default function Playlist() {
         if (response.status === 200) {
           console.log("전송성공");
           setData(response.data);
+          setPlayTitle(playlistTitle);
         } else if (response.status === 500) {
           console.log("Internet Server Error");
         } else {
@@ -81,5 +90,9 @@ export default function Playlist() {
     fetchData();
   }, []);
 
-  return <PlayListViewUI onClickTitle={onClickTitle} data={data} />;
+  return <PlayListViewUI 
+    onClickTitle={onClickTitle} 
+    data={data}
+    playTitle = {playTitle} 
+    />;
 }

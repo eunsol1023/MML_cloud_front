@@ -4,10 +4,10 @@ import styles from "./playlistview.module.css";
 export default function PlayListViewUI(props) {
   return (
     <div className={styles.body}>
-      <div className={styles.playlisttitle}>{props.data?.title}</div>
+      <div className={styles.playlisttitle}>{props.playTitle}</div>
       <div className={styles.playlistContainers}>
         <div className={styles.playlistContainer}>
-          {props.data?.map((data, index) => (
+          {props.data.results?.map((data, index) => (
             <div key={index} className={styles.playlistItem}>
               <div className={styles.playlistImageBox}>
                 <img
@@ -16,7 +16,10 @@ export default function PlayListViewUI(props) {
                   className={styles.playlistImage}
                 />
               </div>
-              <div className={styles.title} onClick={() =>props.onClickTitle(data.title, data.artist)} >
+              <div
+                className={styles.title}
+                onClick={() => props.onClickTitle(data.title, data.artist)}
+              >
                 {data?.title}
               </div>
               <div className={styles.artist}>{data?.artist}</div>
