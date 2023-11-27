@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./songinfo.module.css";
 
+
+
 export default function SonginfoUI(props) {
   return (
     <div className={styles.info_body}>

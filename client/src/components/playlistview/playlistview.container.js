@@ -17,10 +17,10 @@ export default function Playlist() {
   const fetchData = async () => {
     if (localStorage.getItem("pagetype") === "search") {
       try {
-        const response = await axios.get(
-          "http://api.cloudmml.com:8000/music/tag_song2vec/?input_sentence=${encodeURIComponent(sentence)}",
+        const response = await axios.post(
+          `http://api.cloudmml.com:8000/music/tag_song2vec/?input_sentence=${encodeURIComponent(sentence)}`,
           {
-            sentence: localStorage.getItem("sectence"),
+            sentence: localStorage.getItem("sentence"),
           }
         );
 
