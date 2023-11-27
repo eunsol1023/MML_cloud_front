@@ -3,9 +3,9 @@
 }
 
 .home_search_area {
-  display: flex; /* Flexbox를 활성화합니다 */
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
   height: 200px;
   margin-bottom: 20px;
 }
@@ -24,6 +24,11 @@
   font-size: 16px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.home_search:focus {
+  border-color: #cccccc /* 원하는 색상 코드로 바꾸세요 */
+}
+
 
 .home_search button {
   width: 10%;

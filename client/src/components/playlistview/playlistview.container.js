@@ -28,7 +28,7 @@ export default function Playlist() {
         if (response.status === 200) {
           console.log("전송성공");
           setData(response.data);
-          setPlayTitle(`${sentence} 검색해서 얻은 플레이리스트`)
+          setPlayTitle(`'${sentence}' 기반 플레이리스트`)
         } else if (response.status === 400) {
           console.log("Bad Request");
           return;
