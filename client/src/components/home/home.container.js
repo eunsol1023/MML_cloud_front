@@ -12,7 +12,7 @@ export default function HomaPage() {
   const [sentence, setSentence] = useState("");
 
   const onInputChange = (event) => {
-    setSentence(event.target.value);
+    setSentence(event.target.value.toString());
   };
 
   const onFormSubmit = async (event) => {
@@ -21,7 +21,7 @@ export default function HomaPage() {
       console.log("Sending sentence to API:", sentence);
 
       try {
-        const response = await axios.get(`http://api.cloudmml.com:8000/music/tag_song2vec/?sentence=${encodeURIComponent(sentence)}`);
+        const response = await axios.get(`http://api.cloudmml.com:8000/music/tag_song2vec/?input_sentence=${encodeURIComponent(sentence)}`);
         console.log("Response from API:", response.data);
         // 여기에서 API 응답 처리를 할 수 있습니다.
         
@@ -37,7 +37,7 @@ export default function HomaPage() {
       alert('검색어를 입력해주세요!');
       return;
     }
-    localStorage.setItem('sentence', sentence);
+    localStorage.setItem('sentence', sentence.toString());
     localStorage.setItem('pagetype', 'search');
     navigate('/playlistview');
   };

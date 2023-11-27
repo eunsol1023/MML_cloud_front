@@ -23,7 +23,7 @@ export default function Playlsit() {
   const fetchData1 = async () => {
     try {
       if(tmp === 0){
-        const response = await axios.get('http://api.cloudmml.com:8000/music/song2vec/',{})
+        const response = await axios.get('http://api.cloudmml.com:8000/music/song2vec/')
         if (response.status === 200){
             setSong2vec(response.data.slice(0,5))
             setTmp(1)
@@ -40,7 +40,7 @@ export default function Playlsit() {
   const fetchData2 = async () => {
     try{
       if(tmp2 === 0){
-        const response = await axios.get('http://api.cloudmml.com:8000/music/user_like_artist/',{})
+        const response = await axios.get('http://api.cloudmml.com:8000/music/user_like_artist/')
         if (response.status === 200){
             setColaboData(response.data.slice(0,5))
             setTmp2(1)
