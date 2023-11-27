@@ -21,11 +21,8 @@ export default function HomaPage() {
       console.log("Sending sentence to API:", sentence);
 
       try {
-        const response = await axios.post(
-          "http://api.cloudmml.com:8000/music/tag_song2vec/",
-          { sentence }
-        );
-
+        const response = await axios.get(`http://api.cloudmml.com:8000/music/tag_song2vec/
+        ?sentence=${encodeURIComponent(sentence)}`);
         console.log("Response from API:", response.data);
         // 여기에서 API 응답 처리를 할 수 있습니다.
         
