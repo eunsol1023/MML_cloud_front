@@ -79,90 +79,86 @@ const playlist2 = [
 ];
 
 export default function HomePageUI(props) {
-  {
-    return (
-      <div className={styles.home_body}>
-        <div className={styles.home_search_area}>
-          <div className={styles.home_search}>
-            <div>
-              <input
-                type="text"
-                value={props.sentence}
-                onChange={props.onInputChange}
-                placeholder="상황 및 감정 입력"
-              />
-              <button onClick={props.onClickSearch} type = "submit"> 검색</button>
+  return (
+    <div className={styles.home_body}>
+      <div className={styles.home_search_area}>
+        <div className={styles.home_search}>
+          <input
+            type="text"
+            value={props.sentence}
+            onChange={props.onInputChange}
+            placeholder="상황 및 감정 입력"
+          />
+          <button onClick={props.onClickSearch} type="submit">
+            검색
+          </button>
+        </div>
+      </div>
+      <div className={styles.home_playlist_area}>
+        <div className={styles.home_playlist}>
+          <div className={styles.home_playlist_container}>
+            <div className={styles.home_playlist_name}>선선한 날 아침 산책</div>
+            <span
+              className={styles.playlist_info}
+              onClick={props.onClickPlayListView}
+            >
+              더보기
+            </span>
+          </div>
+          <div className={styles.home_card_container}>
+            <div className={styles.home_song_card}>
+              {playlist1.map((playlist, index) => (
+                <div key={index} className={styles.home_abc}>
+                  <div className={styles.home_card}>
+                    <img
+                      src={playlist.image}
+                      alt={playlist.title}
+                      className={styles.home_cardImage}
+                    />
+                    <div className={styles.home_cardContent}>
+                      <h3>{playlist.title}</h3>
+                      <p>{playlist.artist}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div className={styles.home_playlist_area}>
-          <div className={styles.home_playlist}>
-            <div className={styles.home_playlist_container}>
-              <div className={styles.home_playlist_name}>
-                선선한 날 아침 산책
-              </div>
-              <span
-                className={styles.playlist_info}
-                onClick={props.onClickPlayListView}
-              >
-                더보기
-              </span>
-            </div>
-            <div className={styles.home_card_container}>
-              <div className={styles.home_song_card}>
-                {playlist1.map((playlist, index) => (
-                  <div key={index} className={styles.home_abc}>
-                    <div className={styles.home_card}>
-                      <img
-                        src={playlist.image}
-                        alt={playlist.title}
-                        className={styles.home_cardImage}
-                      />
-                      <div className={styles.home_cardContent}>
-                        <h3>{playlist.title}</h3>
-                        <p>{playlist.artist}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
 
-          <div className={styles.home_playlist}>
-            <div className={styles.home_playlist_container}>
-              <div className={styles.home_playlist_name}>
-                몽환적인 밤 드라이브
-              </div>
-              <span
-                className={styles.playlist_info}
-                onClick={props.onClickPlayListView}
-              >
-                더보기
-              </span>
+        <div className={styles.home_playlist}>
+          <div className={styles.home_playlist_container}>
+            <div className={styles.home_playlist_name}>
+              몽환적인 밤 드라이브
             </div>
-            <div className={styles.home_card_container}>
-              <div className={styles.home_song_card}>
-                {playlist2.map((playlist, index) => (
-                  <div key={index} className={styles.home_abc}>
-                    <div className={styles.home_card}>
-                      <img
-                        src={playlist.image}
-                        alt={playlist.title}
-                        className={styles.home_cardImage}
-                      />
-                      <div className={styles.home_cardContent}>
-                        <h3>{playlist.title}</h3>
-                        <p>{playlist.artist}</p>
-                      </div>
+            <span
+              className={styles.playlist_info}
+              onClick={props.onClickPlayListView}
+            >
+              더보기
+            </span>
+          </div>
+          <div className={styles.home_card_container}>
+            <div className={styles.home_song_card}>
+              {playlist2.map((playlist, index) => (
+                <div key={index} className={styles.home_abc}>
+                  <div className={styles.home_card}>
+                    <img
+                      src={playlist.image}
+                      alt={playlist.title}
+                      className={styles.home_cardImage}
+                    />
+                    <div className={styles.home_cardContent}>
+                      <h3>{playlist.title}</h3>
+                      <p>{playlist.artist}</p>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

@@ -19,7 +19,7 @@ export default function Playlist() {
       try {
         const sentence = localStorage.getItem('sentence')
         const response = await axios.get(
-          `http://localhost:8000/music/tag_song2vec/?input_sentence=${sentence}`
+          `http://api.cloudmml.com:8000/music/tag_song2vec/?input_sentence=${sentence}`
         );
         console.log(response)
 
