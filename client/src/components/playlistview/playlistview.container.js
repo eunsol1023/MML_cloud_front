@@ -72,6 +72,7 @@ export default function Playlist() {
           console.log("전송성공");
           setData(response.data);
           setPlayTitle(playlistTitle);
+          console.log(response.data.results)
         } else if (response.status === 500) {
           console.log("Internet Server Error");
         } else {
