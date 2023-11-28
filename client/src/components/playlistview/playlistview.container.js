@@ -45,10 +45,7 @@ export default function Playlist() {
       const playlistTitle = "Song2vec으로 추천된 플레이리스트";
       try {
         const response = await axios.get(
-          "http://api.cloudmml.com:8000/music/song2vec/",
-          {
-            withCredentials: true
-          }
+          "http://api.cloudmml.com:8000/music/song2vec/"
         );
 
         if (response.status === 200) {

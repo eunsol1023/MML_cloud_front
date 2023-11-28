@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./menubar.module.css";
-import logoImage from "./logo.jpeg";
+import logoImage from "./logo.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
