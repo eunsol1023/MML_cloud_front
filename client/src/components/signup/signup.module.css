@@ -1,8 +1,7 @@
 .body {
   height: auto;
   background: linear-gradient(to right, rgba(0, 74, 173, 0.6), rgba(203, 108, 230, 0.6));
-  padding-top: 30px;
-  padding-bottom: 25px;
+  padding: 43px 0px;
 }
 
 .sWrapper {
@@ -10,7 +9,7 @@ text-align: center;
 margin: auto;
 /* padding-top: 30px; */
 width: 540px;
-height: 650px;             
+height: 651px;             
 border: solid 1px transparent;
 border-radius: 5%;
 background-color: rgba(255, 255, 255);

@@ -1,6 +1,6 @@
 .body{
   background: linear-gradient(to right, rgba(0, 74, 173, 0.6), rgba(203, 108, 230, 0.6));
-  padding: 23px 0px
+  padding: 38px 0px
 }
 
 .popup {
@@ -44,7 +44,7 @@ background-color: lightgray;
 .artistfavorite {
 position: relative;
 width: 1250px;
-height: 620px;
+height: 623px;
 margin: auto;
 display: flex;
 flex-direction: column; 
