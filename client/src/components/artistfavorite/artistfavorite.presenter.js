@@ -11,7 +11,7 @@ export default function ArtistFavoriteUI({
   hideMessage,
 }) {
   return (
-    <div>
+    <div className={styles.body}>
       <div className={styles.errormassage}>
         {message && (
           <div className={styles.popup}>

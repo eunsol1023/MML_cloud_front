@@ -1,24 +1,27 @@
-/* .body {
-  margin-left: 280px;
-} */
+.body {
+  height: 700px;
+  padding-top: 70px;
+  background: linear-gradient(to right, rgba(0, 74, 173, 0.6), rgba(203, 108, 230, 0.5));
+}
 
 .wrapper {
   text-align: center;
   margin: auto;
-  margin-top: 70px;
   margin-bottom: 70px;
   width: 450px;
-  height: 550px;
+  height: 530px;
   border: solid 1px transparent;
   border-radius: 5%;
-  background-color: antiquewhite;
+  background-color: rgba(255, 255, 255);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+
 }
 
 .imgBox {
   display: flex;
   width: 120px;
   height: 80px;
-  margin-top: 70px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -42,6 +45,8 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding-bottom: 10px;
+
 }
 
 .idBox .idIcon {
@@ -54,11 +59,10 @@
 .inputtext {
   text-align: left;
   width: 245px;
-  height: 40px;
+  height: 35px;
   border: none;
-  border-bottom: solid 2px coral;
+  border-bottom: solid 1px rgba(34, 34, 34, 0.8);
   background: none;
-  margin-bottom: 10px;
   padding-left: 5px;
   font-size: medium;
 }
@@ -71,6 +75,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 .psBox .psIcon {
@@ -92,12 +97,20 @@
   height: 50px;
   border: solid 1px transparent;
   border-radius: 8px;
-  background-color: #ffab91;
+  border-color: rgba(15, 15, 15, 0.4);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(122, 122, 122, 0.3);
+  color :  black;
   cursor: pointer;
 }
 
 .logSpan {
   font-size: 25px;
+  /* color: white; */
 }
 
 .signUpBox {

@@ -53,10 +53,6 @@ export default function Playlsit() {
         );
 
         if (response.status === 200) {
-          // if(!colaboData){
-          //   setColaboData(response.data.slice(0, 5));
-          // }
-          // setTmp2(1);
           setTmp2(1);
           setColaboData(response.data.slice(0, 5));
         } else {

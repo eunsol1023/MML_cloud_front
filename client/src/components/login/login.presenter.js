@@ -22,7 +22,6 @@ export default function LoginPageUI(props) {
         </div>
         <form onSubmit={handleLoginSubmit} className={styles.inputBox}>
           <input type="hidden" name="csrfmiddlewaretoken" value={csrfToken} />
-          {/* {% csrf_token %} */}
           <div className={styles.idBox}>
             <img src={idIcon} className={styles.idIcon} alt="id" />
             <input
