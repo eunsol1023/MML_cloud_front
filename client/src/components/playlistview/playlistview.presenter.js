@@ -7,7 +7,7 @@ export default function PlayListViewUI(props) {
       <div className={styles.playlisttitle}>{props.playTitle}</div>
       <div className={styles.playlistContainers}>
         <div className={styles.playlistContainer}>
-          {props.data.results?.map((data, index) => (
+          {props.data?.map((data, index) => (
             <div key={index} className={styles.playlistItem}>
               <div className={styles.playlistImageBox}>
                 <img

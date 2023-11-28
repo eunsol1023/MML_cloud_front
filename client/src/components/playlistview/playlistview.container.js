@@ -50,6 +50,7 @@ export default function Playlist() {
 
         if (response.status === 200) {
           console.log("전송성공");
+          console.log(response)
           setData(response.data);
           setPlayTitle(playlistTitle);
         } else if (response.status === 500) {
