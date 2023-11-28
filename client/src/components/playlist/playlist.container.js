@@ -24,9 +24,11 @@ export default function Playlsit() {
   const fetchData1 = async () => {
     try {
       if (tmp === 0) {
-        const sessionKey = localStorage.getItem("sessionKey");
         const response = await axios.get(
-          `http://api.cloudmml.com:8000/music/song2vec/?session_key=${sessionKey}`
+          "http://api.cloudmml.com:8000/music/song2vec/",
+          {
+            withCredentials: true
+          }
         );
         if (response.status === 200) {
           setTmp(1);
@@ -43,13 +45,15 @@ export default function Playlsit() {
   const fetchData2 = async () => {
     try {
       if (tmp2 === 0) {
-        const sessionKey = localStorage.getItem("sessionKey");
         const response = await axios.get(
-          `http://api.cloudmml.com:8000/music/user_like_artist/?session_key=${sessionKey}`
-        );
+          "http://api.cloudmml.com:8000/music/user_like_artist/",
+          {
+            withCredentials: true
+          }
+        )
 
         if (response.status === 200) {
-          if (!colaboData) {
+          if(!colaboData){
             setColaboData(response.data.slice(0, 5));
           }
           setTmp2(1);
