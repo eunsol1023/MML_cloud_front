@@ -24,8 +24,9 @@ export default function Playlsit() {
   const fetchData1 = async () => {
     try {
       if (tmp === 0) {
+        const sessionKey = localStorage.getItem('sessionKey');
         const response = await axios.get(
-          "http://api.cloudmml.com:8000/music/song2vec/"
+          `http://api.cloudmml.com:8000/music/song2vec/?session_key=${sessionKey}`
         );
         if (response.status === 200) {
           setTmp(1);
@@ -46,7 +47,7 @@ export default function Playlsit() {
           "http://api.cloudmml.com:8000/music/user_like_artist/"
         );
         if (response.status === 200) {
-          if(!colaboData){
+          if (!colaboData) {
             setColaboData(response.data.slice(0, 5));
           }
           setTmp2(1);
