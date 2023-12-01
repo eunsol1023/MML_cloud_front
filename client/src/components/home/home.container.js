@@ -32,6 +32,8 @@ export default function HomaPage() {
     try{
       const response = await axios.post('http://api.cloudmml.com:8000/music/tag_song2vec_his/',{
         
+      },{
+        withCredentials: true
       })
       setTmpData(response.data)
       console.log(response.data);
