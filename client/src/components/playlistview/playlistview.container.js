@@ -22,7 +22,7 @@ export default function Playlist() {
         const response = await axios.get(
           `http://api.cloudmml.com:8000/music/tag_song2vec/?input_sentence=${sentence}`,
           {
-            withCredentials: true
+            withCredentials: true,
           }
         );
         console.log(response);
@@ -45,14 +45,15 @@ export default function Playlist() {
       const playlistTitle = "청취이력 기반으로 추천된 플레이리스트";
       try {
         const response = await axios.get(
-          "http://api.cloudmml.com:8000/music/song2vec/"
+          "http://api.cloudmml.com:8000/music/song2vec/",
+          { withCredentials: true }
         );
 
         if (response.status === 200) {
           console.log("전송성공");
-          console.log(response)
           setData(response.data);
           setPlayTitle(playlistTitle);
+          console.log(response.data.results);
         } else if (response.status === 500) {
           console.log("Internet Server Error");
         } else {
@@ -73,7 +74,7 @@ export default function Playlist() {
           console.log("전송성공");
           setData(response.data);
           setPlayTitle(playlistTitle);
-          console.log(response.data.results)
+          console.log(response.data.results);
         } else if (response.status === 500) {
           console.log("Internet Server Error");
         } else {
