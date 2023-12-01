@@ -6,9 +6,9 @@ import axios from "axios";
 export default function HomaPage() {
   const navigate = useNavigate();
   const [sentence, setSentence] = useState("");
-  const [updata, setUpdata] = useState([]);
-  const [botData, setBotData] = useState([]);
-  const [tmpData, setTmpData] = useState([]);
+  // const [updata, setUpdata] = useState([]);
+  // const [botData, setBotData] = useState([]);
+  // const [tmpData, setTmpData] = useState([]);
 
   const onClickPlayListView = () => {
     navigate("/playlistview");
@@ -28,24 +28,24 @@ export default function HomaPage() {
     setSentence(event.target.value);
   };
 
-  const fetchData = async () => {
-    try{
-      const response = await axios.post('http://api.cloudmml.com:8000/music/tag_song2vec_his/',{
+  // const fetchData = async () => {
+  //   try{
+  //     const response = await axios.post('http://api.cloudmml.com:8000/music/tag_song2vec_his/',{
         
-      },{
-        withCredentials: true
-      })
-      setTmpData(response.data)
-      console.log(response.data);
+  //     },{
+  //       withCredentials: true
+  //     })
+  //     setTmpData(response.data)
+  //     console.log(response.data);
 
-    }catch(error){
-      console.error(error);
-    }
-  };
+  //   }catch(error){
+  //     console.error(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchData();
-  },[])
+  // useEffect(() => {
+  //   fetchData();
+  // },[])
 
   return (
     <HomePageUI
