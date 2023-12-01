@@ -1,11 +1,14 @@
 import HomePageUI from "./home.presenter";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function HomaPage() {
   const navigate = useNavigate();
   const [sentence, setSentence] = useState("");
+  const [updata, setUpdata] = useState([]);
+  const [botData, setBotData] = useState([]);
+  const [tmpData, setTmpData] = useState([]);
 
   const onClickPlayListView = () => {
     navigate("/playlistview");
@@ -25,21 +28,22 @@ export default function HomaPage() {
     setSentence(event.target.value);
   };
 
-  // const onFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   if (!sentence) {
-  //     alert("검색어를 입력해주세요!");
-  //     return;
-  //   }
-  //   try {
-  //     const response = await axios.get(
-  //       `http://localhost:8000/music/tag_song2vec/`
-  //     );
-  //     console.log("Response from API:", response.data);
-  //   } catch (error) {
-  //     console.error("ERROR", error);
-  //   }
-  // };
+  const fetchData = async () => {
+    try{
+      const response = await axios.post('http://api.cloudmml.com:8000/music/tag_song2vec_his/',{
+        
+      })
+      setTmpData(response.data)
+      console.log(response.data);
+
+    }catch(error){
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  },[])
 
   return (
     <HomePageUI
