@@ -42,7 +42,7 @@ export default function Playlist() {
         console.log(error);
       }
     } else if (localStorage.getItem("pagetype") === "song2vec") {
-      const playlistTitle = "Song2vec으로 추천된 플레이리스트";
+      const playlistTitle = "청취이력 기반으로 추천된 플레이리스트";
       try {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/song2vec/"
@@ -62,7 +62,7 @@ export default function Playlist() {
         console.log(error);
       }
     } else if (localStorage.getItem("pagetype") === "user_like_artist") {
-      const playlistTitle = "사용자 협업 필터링으로 추천된 플레이리스트";
+      const playlistTitle = "선호 아티스트 기반으로 추천된 플레이리스트";
       try {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/user_like_artist/",

@@ -7,7 +7,7 @@ export default function PlayListUI(props) {
       <div className={styles.body}>
         <div className={styles.playlist_box}>
           <div className={styles.playlist_container}>
-            <div className={styles.playlist_name}>Song2vec으로 추천된 플레이리스트</div>
+            <div className={styles.playlist_name}>청취이력 기반으로 추천된 플레이리스트</div>
             <span
               className={styles.playlist_info}
               onClick={props.onClickPlayListView}
@@ -33,7 +33,7 @@ export default function PlayListUI(props) {
         </div>
         <div className={styles.playlist_box}>
           <div className={styles.playlist_container}>
-            <div className={styles.playlist_name}>사용자 협업 필터링으로 추천된 플레이리스트</div>
+            <div className={styles.playlist_name}>선호 아티스트 기반으로 추천된 플레이리스트</div>
             <span
               className={styles.playlist_info}
               onClick={props.onClickPlayListView2}

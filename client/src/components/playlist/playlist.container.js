@@ -27,7 +27,7 @@ export default function Playlsit() {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/song2vec/",
           {
-            withCredentials: true,
+            withCredentials: true
           }
         );
         if (response.status === 200) {
@@ -48,15 +48,22 @@ export default function Playlsit() {
         const response = await axios.get(
           "http://api.cloudmml.com:8000/music/user_like_artist/",
           {
-            withCredentials: true,
+            withCredentials: true
           }
-        );
+        )
 
         if (response.status === 200) {
+          // if(!colaboData){
+          //   setColaboData(response.data.slice(0, 5));
+          // }
+          // setTmp2(1);
           setTmp2(1);
           setColaboData(response.data.slice(0, 5));
+    
+
         } else {
           console.log("server error");
+          return;
         }
       }
     } catch (error) {
